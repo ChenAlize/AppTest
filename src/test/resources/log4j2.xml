@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN"  monitorInterval="300">
+     <!--定义引用名 -->
+    <Properties>
+        <!-- 输出样式 -->
+        <Property name="Console_pattern">[%d{yyyy-MM-dd HH:mm:ss z}] [%t] [%M] %5c{36}:%L-%msg%n</Property>
+        <!-- 输出路径 -->
+        <Property name="file_name">logs/benlai.log</Property>
+        <!-- <Property name="info_name">logs/Info.log</Property> -->
+        <!-- 备份路径 -->
+        <Property name="rolling_file">logs/$${date:yyyy-MM}/benlai-%d{MM-dd}-.log</Property>
+        <!-- <Property name="rolling_info">logs/$${date:yyyy-MM}/Info-%d{yyy-MM-dd}-%i.log.gz</Property> -->
+        <!-- 日志最小切割单位 -->
+        <Property name="file_size">20 MB</Property>
+        <!-- 日志输出级别 -->
+        <Property name="level_name">all</Property>
+    </Properties>
+
+    <!-- 定义appender -->
+    <Appenders>
+        <!--这个是控制台的配置-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--这个都知道是输出日志的格式-->
+            <PatternLayout pattern="${Console_pattern}"/>
+        </Console>
+        <!-- 这个是回滚输出所以配置 -->
+        <RollingFile name="RollingFile" fileName="${file_name}" filePattern="${rolling_file}">
+			<PatternLayout pattern="${Console_pattern}"/>
+            <!-- <PatternLayout> -->
+                <!-- <pattern>[%d{yyyy-MM-dd HH:mm:ss z}] %t %5c{36}:%L %M %5level >>>> %msg%xEx%n</pattern> -->
+            <!-- </PatternLayout> -->
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="${file_size}"/>
+            </Policies>
+            <DefaultRolloverStrategy fileIndex="max" max="50"/>
+        </RollingFile>
+		
+        <!-- 这个是回滚输出info配置 -->
+        <!-- <RollingFile name="RollingInfo" fileName="${info_name}" filePattern="${rolling_info}"> -->
+            <!-- <PatternLayout> -->
+                <!-- <pattern>[%d{yyyy-MM-dd HH:mm:ss z}] %t %5c{36}:%L %M %5level - %msg%xEx%n</pattern> -->
+            <!-- </PatternLayout> -->
+            <!-- <Policies> -->
+                <!-- <TimeBasedTriggeringPolicy interval="1" modulate="true" /> -->
+                <!-- <SizeBasedTriggeringPolicy size="${file_size}"/> -->
+            <!-- </Policies> -->
+            <!-- <Filters> -->
+                <!-- <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/> -->
+                <!-- <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="deny"/> -->
+            <!-- </Filters> -->
+
+            <!-- <DefaultRolloverStrategy fileIndex="max" max="50"/> -->
+        <!-- </RollingFile> -->
+
+        <!-- 异步日志 -->
+        <Async name="Async">
+            <AppenderRef ref="RollingFile" />
+            <!-- <AppenderRef ref="RollingInfo"/> -->
+        </Async>
+
+    </Appenders>
+
+    <!-- 日志类别 -->
+    <Loggers>
+
+        <!-- 使用异步 -->
+        <Logger name="asyncConsole" additivity="false" level="${level_name}">
+            <AppenderRef ref="Async"/>
+        </Logger>
+
+        <!-- 定义根日志类别  查看level -->
+        <Root level="${level_name}">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Async" />
+        </Root>
+
+    </Loggers>
+</Configuration>
+
+
