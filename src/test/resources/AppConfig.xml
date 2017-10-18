@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <appconfig>
-	<Android>
+
 		<appValue>3.3.0</appValue>
-		<appPackage name="com.android.benlailife.activity">com.android.benlailife.activity</appPackage>
+		<appPackage>com.android.benlailife.activity</appPackage>
 		<appActivity>com.android.benlai.activity.WelcomeActivity</appActivity>
-	</Android>
+
+	<!--华为-->
 	<cellphone name="HAWEI mate 9">
 		<platformVersion>7.0</platformVersion>
 		<udid>GWY0216B26003168</udid>
 	</cellphone>
+
+	<!--红米-->
+	<cellphone name="Redmi Note 4X">
+		<platformVersion>6.0.1</platformVersion>
+		<udid>GWY0216B26003168</udid>
+	</cellphone>
+
 </appconfig>

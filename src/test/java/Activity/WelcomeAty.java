@@ -1,13 +1,13 @@
 package Activity;
 
-import AppUtil.AppDerver;
+import AppUtil.AppDriver;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by chenbo on 2017/10/18.
  */
-public class WelcomeAty extends AppDerver{
+public class WelcomeAty extends AppDriver {
 
     //       向左滑动2次
     public void liftRow(){

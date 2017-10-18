@@ -16,13 +16,13 @@ import java.util.Date;
 /**
  * Created by chenbo on 2017/10/18.
  */
-public class AppDerver {
+public class AppDriver {
 
     private Log log = new Log ( this.getClass () );
 
     public AndroidDriver driver;
     //启动app，获取derver
-    public AppDerver(){
+    public AppDriver(){
 
         DesiredCapabilities des = new DesiredCapabilities (  );
         //设备配置
