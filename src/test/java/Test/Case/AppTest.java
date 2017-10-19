@@ -1,7 +1,7 @@
-package Test;
+package Test.Case;
 
-import Activity.MainAty;
-import Activity.WelcomeAty;
+import Activity.com.Benlai.MainAty;
+import Activity.com.Benlai.WelcomeAty;
 import AppData.AppConfig;
 import AppUtil.AppDriver;
 import io.appium.java_client.android.AndroidDriver;
