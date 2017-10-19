@@ -1,6 +1,10 @@
 package Test;
 
+import Activity.MainAty;
 import Activity.WelcomeAty;
+import AppData.AppConfig;
+import AppUtil.AppDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -8,12 +12,22 @@ import org.testng.annotations.Test;
  */
 public class AppTest {
 
-    @Test(enabled = false )
+    @Test(enabled = true )
     public void test01(){
-        WelcomeAty welcomeAty = new WelcomeAty ();
+        AppDriver appdriver = new AppDriver ();
+        AndroidDriver driver = appdriver.getDriver ();
+        WelcomeAty welcomeAty = new WelcomeAty ( driver );
         welcomeAty.liftRow();
         welcomeAty.experienceClick ();
         welcomeAty.permissionsClick ();
         welcomeAty.allowClick ();
+        MainAty mainAty = new MainAty ( driver );
+        mainAty.clickUserHome ();
+    }
+
+    @Test(enabled = false )
+    public  void test(){
+        AppConfig appConfig = new AppConfig ( "HAWEI mate 9" );
+        System.out.println ( appConfig.getAppActivity () );
     }
 }

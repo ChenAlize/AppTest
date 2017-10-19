@@ -17,11 +17,11 @@ public class Log {
     }
 
         public void pass( String message ) {
-            logger.info ( "[成功] " + message );
+            logger.info ( " [成功] " + message );
         }
 
         public void error( String message ) {
-            logger.error ( "[错误] " + message );
+            logger.error ( this.getClass ().getSimpleName () + "[错误] " + message );
         }
 
         public void fatal( String message ) {
@@ -29,7 +29,7 @@ public class Log {
         }
 
         public void info( String message ) {
-            logger.info ( "[信息] " + message );
+            logger.info ( this.getClass ().getSimpleName () + "[信息] " + message );
         }
 
         public void unknown( String message ) {

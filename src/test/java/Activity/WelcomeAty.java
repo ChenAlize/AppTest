@@ -1,14 +1,19 @@
 package Activity;
 
-import AppUtil.AppDriver;
+import AppUtil.AppAction;
+import AppUtil.AppElement;
+import io.appium.java_client.android.AndroidDriver;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by chenbo on 2017/10/18.
  */
-public class WelcomeAty extends AppDriver {
+public class WelcomeAty extends AppElement {
 
+    public WelcomeAty(AndroidDriver driver) {
+        super ( driver );
+    }
     //       向左滑动2次
     public void liftRow(){
         for(int i=0 ; i < 2 ; i++) {
@@ -28,6 +33,5 @@ public class WelcomeAty extends AppDriver {
         super.coordinateClick ( 783,1686 );
         super.coordinateClick ( 783,1686 );
         super.coordinateClick ( 783,1686 );
-        driver.manage ().timeouts ().implicitlyWait ( 120, TimeUnit.SECONDS );
     }
 }
