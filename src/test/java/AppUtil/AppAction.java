@@ -1,16 +1,12 @@
 package AppUtil;
 
-import AppData.AppConfig;
-import Util.Log;
+import Util.Logger.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.aspectj.util.FileUtil;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -93,4 +89,5 @@ public class AppAction {
             e.printStackTrace ();
         }
     }
+
 }

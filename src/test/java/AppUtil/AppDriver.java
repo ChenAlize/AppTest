@@ -1,9 +1,10 @@
 package AppUtil;
 
 import AppData.AppConfig;
-import Util.Log;
+import Util.Logger.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -46,4 +47,5 @@ public class AppDriver {
         }
         return driver;
     }
+
 }

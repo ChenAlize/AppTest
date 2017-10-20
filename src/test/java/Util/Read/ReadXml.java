@@ -1,7 +1,7 @@
 package Util.Read;
 
 
-import Util.Log;
+import Util.Logger.Log;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;

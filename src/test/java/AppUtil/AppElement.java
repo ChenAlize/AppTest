@@ -58,7 +58,7 @@ public class AppElement extends AppAction {
                     break;
             }
         }catch ( Exception e ){
-            log.error ( "没有定位到元素： " + locator.getLocation () );
+            log.error ( "【元素定位失败】： " + locator.getLocation () );
             screenShot ();
         }
         return element;
@@ -102,7 +102,7 @@ public class AppElement extends AppAction {
                     break;
             }
         }catch ( Exception e ){
-            log.error ( "没有定位点元素 ： " + locator.getLocation () );
+            log.error ( "【元素定位失败】 ： " + locator.getLocation () );
             screenShot ();
         }
         return element;
@@ -117,12 +117,17 @@ public class AppElement extends AppAction {
         String classname = this.getClass ().getSimpleName ();
         final Locator locator = new Locator ( element ,classname );
         WebDriverWait wait = new WebDriverWait ( driver , locator.getWaittime () );
-        WebElement Androidelement = wait.until ( new ExpectedCondition<WebElement> () {
-            @Override
-            public WebElement apply(WebDriver webDriver) {
-                return getFindElement( locator );
-            }
-        } );
+        WebElement Androidelement = null;
+        try {
+            Androidelement = wait.until ( new ExpectedCondition <WebElement> () {
+                @Override
+                public WebElement apply(WebDriver webDriver) {
+                    return getFindElement ( locator );
+                }
+            } );
+        }catch ( Exception e ){
+            log.error ( "【查找元素超时】：" + element +":"+ locator.getElement () );
+        }
         return Androidelement;
     }
 
@@ -135,12 +140,18 @@ public class AppElement extends AppAction {
         String classname = this.getClass ().getSimpleName ();
         final Locator locator = new Locator ( element ,classname );
         WebDriverWait wait = new WebDriverWait ( driver , locator.getWaittime () );
-        List<WebElement> elementList = wait.until ( new ExpectedCondition <List <WebElement>> () {
+
+        List<WebElement> elementList = null;
+        try {
+        elementList = wait.until ( new ExpectedCondition <List <WebElement>> () {
             @Override
             public List <WebElement> apply(WebDriver webDriver) {
                 return getFindElements ( locator );
             }
         } );
+        }catch ( Exception e ){
+            log.error ( "【查找元素超时】：" + element +":"+ locator.getElement () );
+        }
         return elementList;
     }
 
@@ -207,6 +218,5 @@ public class AppElement extends AppAction {
         driver.pressKeyCode ( AndroidKeyCode.BACK );
         log.info ( "【返回】" );
     }
-
 
 }

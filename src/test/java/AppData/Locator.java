@@ -1,6 +1,6 @@
 package AppData;
 
-import Util.Log;
+import Util.Logger.Log;
 import Util.Read.ReadExcel;
 import org.testng.annotations.Test;
 

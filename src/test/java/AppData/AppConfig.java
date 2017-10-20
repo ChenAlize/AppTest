@@ -1,6 +1,6 @@
 package AppData;
 
-import Util.Log;
+import Util.Logger.Log;
 import Util.Read.ReadXml;
 
 import java.util.HashMap;
@@ -20,6 +20,8 @@ public class AppConfig {
     private String udid;             //设备号
     private boolean isLogin = false ;        //是否已登录
 
+    public AppConfig() {}
+
     public AppConfig( String phone ){
         if ( phone == null || phone.equals ( "" ) ){
             cellphone = "HAWEI mate 9";
@@ -37,6 +39,9 @@ public class AppConfig {
 
     public void setIsLogin( boolean islogin ){
         this.isLogin = islogin;
+        if ( this.isLogin ){
+            log.info ( "【登录成功】" );
+        }
     }
 
     public boolean getIsLogin(){
