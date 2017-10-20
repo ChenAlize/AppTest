@@ -1,4 +1,4 @@
-package Util;
+package Util.Report;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +17,7 @@ public class Log {
     }
 
         public void pass( String message ) {
-            logger.info ( " [成功] " + message );
+            logger.info ( this.getClass ().getSimpleName () + " [成功] " + message );
         }
 
         public void error( String message ) {
@@ -25,7 +25,7 @@ public class Log {
         }
 
         public void fatal( String message ) {
-            logger.fatal( "[错误] " + message );
+            logger.fatal( this.getClass ().getSimpleName () + "[错误] " + message );
         }
 
         public void info( String message ) {
@@ -33,11 +33,11 @@ public class Log {
         }
 
         public void unknown( String message ) {
-            logger.error ("[未知] " + message );
+            logger.error (this.getClass ().getSimpleName () + "[未知] " + message );
         }
 
         public void warning( String message ) {
-            logger.warn ( "[警告] " + message );
+            logger.warn ( this.getClass ().getSimpleName () + "[警告] " + message );
         }
 
 }

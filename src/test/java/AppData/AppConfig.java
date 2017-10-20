@@ -1,7 +1,7 @@
 package AppData;
 
-import Util.Log;
-import Util.Read.ReadXml;
+import Util.Report.Log;
+import Util.Reader.ReadXml;
 
 import java.util.HashMap;
 

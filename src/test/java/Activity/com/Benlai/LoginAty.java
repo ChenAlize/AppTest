@@ -1,4 +1,4 @@
-package Activity;
+package Activity.com.Benlai;
 
 import AppUtil.AppElement;
 import io.appium.java_client.android.AndroidDriver;

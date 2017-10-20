@@ -1,16 +1,12 @@
 package AppUtil;
 
-import AppData.AppConfig;
-import Util.Log;
+import Util.Report.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.aspectj.util.FileUtil;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -60,7 +56,9 @@ public class AppAction {
      * 截图
      */
     public void screenShot ( ) {
+
         File screenshot = driver.getScreenshotAs ( OutputType.FILE );
+
         try {
             FileUtil.copyFile ( screenshot , new File ( System.getProperty ( "user.dir" )+"/screenSho/"+data ()+".jpg" ) );
 

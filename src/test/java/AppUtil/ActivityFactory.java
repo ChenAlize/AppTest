@@ -1,6 +1,6 @@
 package AppUtil;
 
-import Util.Log;
+import Util.Report.Log;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.lang.reflect.Constructor;
@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
  */
 public class ActivityFactory {
 
-    static Log logger = new Log ( ActivityFactory.class );
+    static Log log = new Log ( ActivityFactory.class );
     /**
      * 反射--跳转页面
      * @param clazz
@@ -31,9 +31,9 @@ public class ActivityFactory {
             //object指向类对象
             object = constructor.newInstance ( driver );
         } catch (Exception e) {
-            logger.error ( "【页面跳转失败】  目标页面： " + classname );
+            log.error ( "【页面跳转失败】  目标页面： " + classname );
         }
-        logger.info ( "【页面跳转成功】"  + classname );
+        log.info ( "【页面跳转成功】"  + classname );
         return object;
     }
 }

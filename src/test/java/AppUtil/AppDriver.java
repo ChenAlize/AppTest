@@ -1,7 +1,7 @@
 package AppUtil;
 
 import AppData.AppConfig;
-import Util.Log;
+import Util.Report.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
