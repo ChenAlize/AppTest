@@ -20,4 +20,35 @@ public class UserHomeAty extends AppElement {
     public void clickCenterLogin(){
         click ( "登录注册" );
     }
+
+    /**
+     * 点击--首页
+     */
+    public void clickMain(){
+        click ( "首页" );
+    }
+    /**
+     * 点击--分类
+     */
+    public void clickCategory(){
+        click ( "分类" );
+    }
+    /**
+     * 点击--新品
+     */
+    public void clickProduct(){
+        click ( "新品" );
+    }
+    /**
+     * 点击--购物车
+     */
+    public void clickCart(){
+        click ( "购物车" );
+    }
+    /**
+     * 点击——我的本来
+     */
+    public void clickUserHome(){
+        click ( "我的本来" );
+    }
 }

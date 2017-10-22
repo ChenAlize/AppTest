@@ -156,6 +156,61 @@ public class AppElement extends AppAction {
     }
 
     /**
+     * 判断元素是否存在
+     * @param element
+     * @return
+     */
+    public boolean isExist( String element ){
+
+        String classname = this.getClass ().getSimpleName ();
+
+        final Locator locator = new Locator ( element ,classname );
+
+        try {
+            new WebDriverWait ( driver , locator.getWaittime () ).until(new ExpectedCondition<List<WebElement>>() {
+                @Override
+                public List<WebElement> apply( WebDriver webDriver ) {
+                    List<WebElement> element ;
+                    switch ( locator.getByType()) {
+                        case id:
+                            element = driver.findElements ( By.id ( locator.getElement () ) );
+                            break;
+                        case name:
+                            element = driver.findElements ( By.name ( locator.getElement () ) );
+                            break;
+                        case xpath:
+                            element = driver.findElements ( By.xpath ( locator.getElement () ) );
+                            break;
+                        case tagName:
+                            element = driver.findElements ( By.tagName ( locator.getElement () ) );
+                            break;
+                        case linkText:
+                            element = driver.findElements ( By.linkText ( locator.getElement () ) );
+                            break;
+                        case className:
+                            element = driver.findElements ( By.className ( locator.getElement () ) );
+                            break;
+                        case cssSelector:
+                            element = driver.findElements ( By.cssSelector ( locator.getElement () ) );
+                            break;
+                        case partialLinkText:
+                            element = driver.findElements ( By.partialLinkText ( locator.getElement () ) );
+                            break;
+                        default:
+                            element = driver.findElements ( By.id ( locator.getElement () ) );
+                            break;
+                    }
+                    return element ;
+                }
+            });
+            return true;
+        } catch ( Exception e ){
+            log.error( "【元素不存在】" + locator.getLocation() + " : " + locator.getElement() );
+            return false;
+        }
+    }
+
+    /**
      * 点击元素
      * @param locator
      */

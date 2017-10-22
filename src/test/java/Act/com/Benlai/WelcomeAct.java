@@ -9,11 +9,9 @@ import io.appium.java_client.android.AndroidDriver;
  */
 public class WelcomeAct extends ActBase {
 
-    public WelcomeAct(AndroidDriver driver) {
-        super ( driver );
-    }
+    public WelcomeAct(AndroidDriver driver) { super ( driver ); }
 
-    WelcomeAty welcomeAty = new WelcomeAty ( driver );
+    public WelcomeAty welcomeAty = new WelcomeAty ( driver );
 
     /**
      * 欢迎

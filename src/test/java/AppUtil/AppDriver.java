@@ -41,7 +41,7 @@ public class AppDriver {
 
         try {
             driver = new AndroidDriver ( new URL ( "http://127.0.0.1:4723/wd/hub" ) ,des );
-        } catch (MalformedURLException e) {
+        } catch ( Exception e) {
             log.error ( "【获取 AndroidDriver 失败！】" );
             e.printStackTrace ();
         }

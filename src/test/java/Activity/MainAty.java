@@ -12,6 +12,10 @@ public class MainAty extends AppElement {
         super ( driver );
     }
 
+    public boolean isPackage(){
+       return isExist( "立即领取" );
+    }
+
     /**
      * 点击——立即领取
      */
@@ -57,7 +61,7 @@ public class MainAty extends AppElement {
     /**
      * 点击--切站
      */
-    public void clickTvCtiy(){
+    public void clickTvCity(){
         click ( "点击切站" );
     }
     /**
@@ -82,7 +86,11 @@ public class MainAty extends AppElement {
      * 获取--推荐Tab的text
      */
     public String getRecommend(){
-        return getListText ( "首页Tab" , 0 );
+        return getListText ( "Tab" , 0 );
+    }
+
+    public boolean isTab(){
+        return isExist( "水产" );
     }
 
 

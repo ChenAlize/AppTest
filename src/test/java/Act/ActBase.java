@@ -11,13 +11,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class ActBase {
 
-    public Log log = new Log ( this.getClass () );
-
+    public Log log;
     public AndroidDriver driver;
+    public AppConfig Config;
 
-    public AppConfig Config = new AppConfig ( );
-
-    public ActBase(AndroidDriver driver){this.driver = driver;}
+    public ActBase(AndroidDriver driver){this.driver = driver;log = new Log ( this.getClass () );Config = new AppConfig ( );}
 
     public AndroidDriver getDriver(){return this.driver;}
 
