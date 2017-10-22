@@ -7,14 +7,6 @@ import static com.relevantcodes.extentreports.NetworkMode.OFFLINE;
 
 public class ExtentManager {
 
-    public static ExtentReports extent;
-
-    public static ExtentReports createReports( String filePath ){
-        extent = new ExtentReports( filePath , false , NEWEST_FIRST , OFFLINE );
-        extent.addSystemInfo( "Selenium Version", "2.46" );
-        return extent;
-    }
-
 /*    public static ExtentReports getInstance() {
         if (extent == null)
             createInstance(System.getProperty ( "user.dir" ) + "/test-output/extent.html");

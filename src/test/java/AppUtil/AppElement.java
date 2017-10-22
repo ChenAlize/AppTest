@@ -58,8 +58,8 @@ public class AppElement extends AppAction {
                     break;
             }
         }catch ( Exception e ){
-            log.error ( "【元素定位失败】： " + locator.getLocation () );
-            screenShot ();
+            log.error ( "【元素定位失败】： " + locator.getLocation () , screenShot () );
+
         }
         return element;
     }
@@ -102,8 +102,8 @@ public class AppElement extends AppAction {
                     break;
             }
         }catch ( Exception e ){
-            log.error ( "【元素定位失败】 ： " + locator.getLocation () );
-            screenShot ();
+            log.error ( "【元素定位失败】 ： " + locator.getLocation () ,screenShot () );
+
         }
         return element;
     }
@@ -205,7 +205,7 @@ public class AppElement extends AppAction {
             });
             return true;
         } catch ( Exception e ){
-            log.error( "【元素不存在】" + locator.getLocation() + " : " + locator.getElement() );
+            log.error( "【元素不存在】" + locator.getLocation() + " : " + locator.getElement() ,screenShot ());
             return false;
         }
     }
@@ -216,8 +216,8 @@ public class AppElement extends AppAction {
      */
     public void click( String locator ){
         findElement ( locator ).click ();
-        screenShot ();
-        log.info ( "【点击】 ： " + locator );
+
+        log.info ( "【点击】 ： " + locator ,screenShot ());
     }
 
     /**
@@ -227,8 +227,8 @@ public class AppElement extends AppAction {
      */
     public void listClick( String locator , int index ){
         findElements ( locator ).get ( index ).click ();
-        log.info ( "【点击】 ： " + locator );
-        screenShot ();
+        log.info ( "【点击】 ： " + locator ,screenShot ());
+
     }
 
     /**
@@ -237,8 +237,8 @@ public class AppElement extends AppAction {
      */
     public void typing( String locator , String element ){
         findElement ( locator ).sendKeys ( element );
-        log.info ( "【输入】  " +  locator +  " : " + element );
-        screenShot ();
+        log.info ( "【输入】  " +  locator +  " : " + element ,screenShot ());
+
     }
 
     /**
@@ -248,8 +248,8 @@ public class AppElement extends AppAction {
      */
     public String getText( String locator ){
         String text = findElement ( locator ).getText ();
-        log.info (  "【获取文本】 ： " + text );
-        screenShot ();
+        log.info (  "【获取文本】 ： " + text ,screenShot ());
+
         return text;
     }
 
@@ -261,8 +261,8 @@ public class AppElement extends AppAction {
      */
     public String getListText( String locator , int index ){
         String text = findElements ( locator ).get ( index ).getText ();
-        log.info (  "【获取文本】 ： " + text );
-        screenShot ();
+        log.info (  "【获取文本】 ： " + text ,screenShot ());
+
         return text;
     }
 
@@ -271,7 +271,7 @@ public class AppElement extends AppAction {
      */
     public void back(){
         driver.pressKeyCode ( AndroidKeyCode.BACK );
-        log.info ( "【返回】" );
+        log.info ( "【返回】" , screenShot ());
     }
 
 }

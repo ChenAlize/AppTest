@@ -8,13 +8,12 @@ import io.appium.java_client.android.AndroidDriver;
  */
 public class AppTest{
 
-    public AndroidDriver driver;
+    public static AndroidDriver driver;
 
-    public void  init(){
-        AppDriver appdriver = new AppDriver ();
-        driver = appdriver.getDriver ();
+    public static void  init(){
+
     }
 
-    public void end(){ driver.quit (); }
+    public static void end(){ driver.quit (); }
 
 }

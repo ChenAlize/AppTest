@@ -27,8 +27,7 @@ public class AppAction {
      * 水平划动
      */
     public void scrollLevel( int x1 , int x2 ,int y ) {
-        screenShot ();
-        log.info ( "【水平划动】 ： ( " + x1 + " , " + y + " : " + x2 + " , " + y + " ) " );
+        log.info ( "【水平划动】 ： ( " + x1 + " , " + y + " : " + x2 + " , " + y + " ) " , screenShot () );
         driver.swipe ( x1 , y , x2 ,y , 0 );
 
         try {
@@ -42,8 +41,8 @@ public class AppAction {
      * 竖直划动
      */
     public void scrollUp ( int x , int y1 ,int y2 ) {
-        screenShot ();
-        log.info ( "【竖直划动】( " + x + " , " + y1 + " : " + x + " , " + y2 + " ) " );
+
+        log.info ( "【竖直划动】( " + x + " , " + y1 + " : " + x + " , " + y2 + " ) " ,screenShot () );
         driver.swipe ( x , y1 , x , y2 , 0 );
         try {
             Thread.sleep ( 2000 );
@@ -55,21 +54,24 @@ public class AppAction {
     /**
      * 截图
      */
-    public void screenShot ( ) {
-        File screenshot = driver.getScreenshotAs ( OutputType.FILE );
+    public java.lang.String screenShot ( ) {
+        File screenShot = driver.getScreenshotAs ( OutputType.FILE );
+        java.lang.String screenCast = new java.lang.String( System.getProperty ( "user.dir" )+"/screenSho/"+data ()+".jpg" );;
         try {
-            FileUtil.copyFile ( screenshot , new File ( System.getProperty ( "user.dir" )+"/screenSho/"+data ()+".jpg" ) );
+
+            FileUtil.copyFile ( screenShot , new File ( screenCast ) );
 
         } catch (IOException e) {
             log.error ( "【截图失败】 " );
             e.printStackTrace ();
         }
+        return screenCast;
     }
 
     /**
      * 获取时间格式
      */
-    public String data ( ) {
+    public java.lang.String data ( ) {
         Date date = new Date();
         return new SimpleDateFormat ("yyyy_MM_dd_HH_mm_ss").format(date);
     }
@@ -80,8 +82,7 @@ public class AppAction {
      * @param y
      */
     public void coordinateClick ( int x , int y ){
-        screenShot ();
-        log.info ( "【点击坐标】 ： ( " + x + " , " + y + " )" );
+        log.info ( "【点击坐标】 ： ( " + x + " , " + y + " )" , screenShot ());
         driver.tap ( 1,x,y,0 );
         try {
             Thread.sleep(1000);

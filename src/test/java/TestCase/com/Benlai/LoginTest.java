@@ -6,24 +6,21 @@ import Act.com.Benlai.WelcomeAct;
 import Activity.UserHomeAty;
 import AppUtil.AppDriver;
 import TestCase.AppTest;
-import Util.Logger.Log;
+import Util.Report.Initialize;
 import io.appium.java_client.android.AndroidDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
-
-import java.lang.reflect.Method;
+import org.testng.annotations.Test;
 
 /**
  * Created by chenbo on 2017/10/18.
  */
-public class LoginTest extends AppTest{
+public class LoginTest extends Initialize{
 
     public AndroidDriver driver;
 
-    public Log log;
-
     @Test(enabled = false )
     public void LoginTest(){
+        AppDriver appdriver = new AppDriver ();
+        driver = appdriver.getDriver ();
         //欢迎
         WelcomeAct welcomeAct = new WelcomeAct ( driver );
         welcomeAct.welcome ();
@@ -37,45 +34,18 @@ public class LoginTest extends AppTest{
         LoginAct loginAct = new LoginAct ( driver );
         loginAct.Login ();
         System.out.println ( "【是否登录成功】<?> " + loginAct.Config.getIsLogin () );
-
+        driver.quit();
     }
 
     @Test(enabled = true )
     public  void test(){
-        init();
+        AppDriver appdriver = new AppDriver ();
+        driver = appdriver.getDriver ();
         //欢迎
         WelcomeAct welcomeAct = new WelcomeAct ( driver );
         welcomeAct.welcome ();
-        end();
+        driver.quit();
     }
 
-    @BeforeSuite
-    public void beforeSuite() {
-    }
-
-    @BeforeClass
-    public void beforeClass() {
-        System.out.println( " 1 ===== 测试开始：  " + this.getClass().getSimpleName() );
-        log = new Log();
-        log.createTest( this.getClass() );
-    }
-
-    @BeforeMethod
-    public void beforeMethod( Method method ) {
-        System.out.println( " 5 ===== 执行测试方法：  " + method.getName() );
-        log.addNode( method );
-    }
-
-    @AfterMethod
-    public void afterMethod(ITestResult result) {
-        log.flush();
-        System.out.println( " ===== 测试方法结束：  " + result.getName() );
-    }
-
-    @AfterClass
-    public void aftrtClass(){
-        System.out.println( " ===== 测试结束：  " + this.getClass().getSimpleName() );
-        log.close();
-    }
 
 }

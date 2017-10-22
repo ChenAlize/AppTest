@@ -1,5 +1,6 @@
 package Util.Logger;
 
+import Util.Report.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.logging.log4j.LogManager;
@@ -30,18 +31,15 @@ public class Log {
     public Log(Class<?> clacc ) { logger = LogManager.getLogger ( clacc ); }
 
     public void createTest( Class<?> clacc ){
-        System.out.println( "3 ===== 开始测试报表：  " + clacc.getSimpleName() );
         String path = new String( System.getProperty ( "user.dir" ) + "/test-output/extent.html");
-        extentReports = new ExtentReports(  path , false , NEWEST_FIRST , OFFLINE );
+        extentReports =  new ExtentReports(  path , false , NEWEST_FIRST , OFFLINE );
         test = extentReports.startTest( clacc.getSimpleName() , "@class" );
-        System.out.println( " 4 ===== 开始测试报表成功：  " + test );
     }
 
     public void addNode( Method method ){
-        System.out.println( " 6 ===== 添加子测试：  " );
+
         node = extentReports.startTest( method.getName() , "@test" );
-        test.appendChild( node );
-        System.out.println( " 7 ===== 添加子测试成功：  " + node );
+        test.appendChild( node );            //添加日志节点
 
     }
 
@@ -64,12 +62,22 @@ public class Log {
         node.log( LogStatus.ERROR , message );
         }
 
+    public void error( String message , String path) {
+        logger.error (  "[错误] " + message );
+        node.log( LogStatus.ERROR , message + node.addBase64ScreenShot( path ));
+    }
+
     public void fatal( String message ) {
         logger.fatal( "[错误] " + message );
         node.log( LogStatus.FATAL , message );
         }
 
-    public void info( String message ) {
+    public void info( String message , String path ) {
+        logger.info (  "[信息] " + message );
+        node.log( LogStatus.INFO , message + node.addBase64ScreenShot( path ) );
+    }
+
+    public void info( String message  ) {
         logger.info (  "[信息] " + message );
         node.log( LogStatus.INFO , message );
     }
