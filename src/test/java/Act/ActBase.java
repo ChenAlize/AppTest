@@ -36,4 +36,5 @@ public class ActBase {
      * @param min
      */
     public void waits( int min ){driver.manage ().timeouts ().implicitlyWait ( min , TimeUnit.MINUTES );}
+
 }

@@ -10,15 +10,16 @@ import java.util.HashMap;
  */
 public class AppConfig {
 
-    Log log = new Log ( this.getClass () );
+    static Log log = new Log ( AppConfig.class );
 
-    private String appValue;         //APP版本
-    private String appPackage;       //APP包名
-    private String appActivity;      //APP的Activity
-    private String cellphone;        //手机型号
-    private String platformVersion;  //安卓系统版本
-    private String udid;             //设备号
-    private boolean isLogin = false ;        //是否已登录
+    private static String appValue;         //APP版本
+    private static String appPackage;       //APP包名
+    private static String appActivity;      //APP的Activity
+    private static String cellphone;        //手机型号
+    private static String platformVersion;  //安卓系统版本
+    private static String udid;             //设备号
+    private static boolean isLogin = false ;        //是否已登录
+    private static String logPath ;
 
     public AppConfig() {}
 
@@ -35,32 +36,36 @@ public class AppConfig {
         this.appActivity = map.get ( "appActivity" ).toString ();
         this.platformVersion = map.get ( "platformVersion" ).toString () ;
         this.udid = map.get ( "udid" ).toString ();
+        this.logPath = map.get ( "logPath" ).toString ();
     }
 
-    public void setIsLogin( boolean islogin ){
-        this.isLogin = islogin;
-        if ( this.isLogin ){
+    public static void setIsLogin( boolean login ){
+        isLogin = login;
+        if ( isLogin ){
             log.info ( "【登录成功】" );
         }
     }
 
-    public boolean getIsLogin(){
-        return this.isLogin;
+    public static boolean getIsLogin(){
+        return isLogin;
     }
-    public String getAppValue(){
-        return this.appValue;
+    public static String getAppValue(){
+        return appValue;
     }
-    public String getAppPackage(){
-        return this.appPackage;
+    public static String getAppPackage(){
+        return appPackage;
     }
-    public String getAppActivity(){
+    public static String getAppActivity(){
         return appActivity ;
     }
-    public String getplatformVersion(){
-        return this.platformVersion;
+    public static String getplatformVersion(){
+        return platformVersion;
     }
-    public String getudid(){
-        return this.udid;
+    public static String getudid(){
+        return udid;
+    }
+    public static String getLogPath(){
+        return new String ( System.getProperty ( "user.dir" ) + logPath );
     }
 
 }

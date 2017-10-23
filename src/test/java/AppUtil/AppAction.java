@@ -1,5 +1,6 @@
 package AppUtil;
 
+import AppData.AppConfig;
 import Util.Logger.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.aspectj.util.FileUtil;
@@ -27,9 +28,9 @@ public class AppAction {
      * 水平划动
      */
     public void scrollLevel( int x1 , int x2 ,int y ) {
-        log.info ( "【水平划动】 ： ( " + x1 + " , " + y + " : " + x2 + " , " + y + " ) " , screenShot () );
-        driver.swipe ( x1 , y , x2 ,y , 0 );
 
+        driver.swipe ( x1 , y , x2 ,y , 0 );
+        log.info ( "【水平划动】 ： ( " + x1 + " , " + y + " : " + x2 + " , " + y + " ) " , screenShot () );
         try {
             Thread.sleep ( 1000 );
         } catch (InterruptedException e) {
@@ -42,8 +43,9 @@ public class AppAction {
      */
     public void scrollUp ( int x , int y1 ,int y2 ) {
 
-        log.info ( "【竖直划动】( " + x + " , " + y1 + " : " + x + " , " + y2 + " ) " ,screenShot () );
+
         driver.swipe ( x , y1 , x , y2 , 0 );
+        log.info ( "【竖直划动】( " + x + " , " + y1 + " : " + x + " , " + y2 + " ) " ,screenShot () );
         try {
             Thread.sleep ( 2000 );
         } catch (InterruptedException e) {
@@ -56,7 +58,7 @@ public class AppAction {
      */
     public java.lang.String screenShot ( ) {
         File screenShot = driver.getScreenshotAs ( OutputType.FILE );
-        java.lang.String screenCast = new java.lang.String( System.getProperty ( "user.dir" )+"/screenSho/"+data ()+".jpg" );;
+        java.lang.String screenCast = AppConfig.getLogPath () + "/screenSho/"+data ()+".jpg" ;
         try {
 
             FileUtil.copyFile ( screenShot , new File ( screenCast ) );
@@ -82,13 +84,15 @@ public class AppAction {
      * @param y
      */
     public void coordinateClick ( int x , int y ){
-        log.info ( "【点击坐标】 ： ( " + x + " , " + y + " )" , screenShot ());
+
         driver.tap ( 1,x,y,0 );
+        log.info ( "【点击坐标】 ： ( " + x + " , " + y + " )" , screenShot ());
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace ();
         }
     }
+
 
 }

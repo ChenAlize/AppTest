@@ -1,4 +1,4 @@
-package Util.Report;
+package Util.TestUtil;
 
 import Util.Logger.Log;
 import org.testng.ITestResult;

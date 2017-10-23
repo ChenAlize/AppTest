@@ -13,6 +13,7 @@ public class MainAty extends AppElement {
     }
 
     public boolean isPackage(){
+       log.info ( "【查看】：红包是否存在。" ,screenShot () );
        return isExist( "立即领取" );
     }
 

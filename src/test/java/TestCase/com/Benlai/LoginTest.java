@@ -4,10 +4,9 @@ import Act.com.Benlai.LoginAct;
 import Act.com.Benlai.MainAct;
 import Act.com.Benlai.WelcomeAct;
 import Activity.UserHomeAty;
-import AppUtil.AppDriver;
+import AppData.AppConfig;
 import TestCase.AppTest;
-import Util.Report.Initialize;
-import io.appium.java_client.android.AndroidDriver;
+import Util.TestUtil.Initialize;
 import org.testng.annotations.Test;
 
 /**
@@ -15,36 +14,32 @@ import org.testng.annotations.Test;
  */
 public class LoginTest extends Initialize{
 
-    public AndroidDriver driver;
-
     @Test(enabled = false )
     public void LoginTest(){
-        AppDriver appdriver = new AppDriver ();
-        driver = appdriver.getDriver ();
+        AppTest.init ();
         //欢迎
-        WelcomeAct welcomeAct = new WelcomeAct ( driver );
+        WelcomeAct welcomeAct = new WelcomeAct ( AppTest.driver );
         welcomeAct.welcome ();
         //首页操作 ---  进入个人中心
-        MainAct mainAct = new MainAct( driver );
+        MainAct mainAct = new MainAct( AppTest.driver );
         mainAct.toUserHome();
         //未登录状态 ---- 点击登录
-        UserHomeAty homeAty = new UserHomeAty ( driver );
+        UserHomeAty homeAty = new UserHomeAty ( AppTest.driver );
         homeAty.clickCenterLogin ();
         //帐号密码登录
-        LoginAct loginAct = new LoginAct ( driver );
+        LoginAct loginAct = new LoginAct ( AppTest.driver );
         loginAct.Login ();
-        System.out.println ( "【是否登录成功】<?> " + loginAct.Config.getIsLogin () );
-        driver.quit();
+        System.out.println ( "【是否登录成功】<?> " + AppConfig.getIsLogin () );
+        AppTest.end ();
     }
 
     @Test(enabled = true )
     public  void test(){
-        AppDriver appdriver = new AppDriver ();
-        driver = appdriver.getDriver ();
+        AppTest.init ();
         //欢迎
-        WelcomeAct welcomeAct = new WelcomeAct ( driver );
+        WelcomeAct welcomeAct = new WelcomeAct ( AppTest.driver );
         welcomeAct.welcome ();
-        driver.quit();
+        AppTest.end ();
     }
 
 

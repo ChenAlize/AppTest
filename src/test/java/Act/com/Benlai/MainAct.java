@@ -22,7 +22,9 @@ public class MainAct extends ActBase {
      * 进入城市
      */
     public void toCity(){
-        if ( mainAty.isPackage() ){ mainAty.clickPackageClose(); }
+        if ( mainAty.isPackage() ){
+            mainAty.clickPackageClose();
+        }
         mainAty.clickTvCity();
     }
 }

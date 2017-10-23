@@ -8,6 +8,7 @@
 		<appActivity>com.android.benlai.activity.WelcomeActivity</appActivity>
 		<platformVersion>7.0</platformVersion>
 		<udid>GWY0216B26003168</udid>
+		<logPath>/test-output</logPath>
 	</cellphone>
 
 	<!--红米-->

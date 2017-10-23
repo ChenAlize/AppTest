@@ -1,4 +1,4 @@
-package TestCase.com.Benlai;
+package Util.Report;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;

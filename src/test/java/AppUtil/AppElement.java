@@ -162,52 +162,60 @@ public class AppElement extends AppAction {
      */
     public boolean isExist( String element ){
 
-        String classname = this.getClass ().getSimpleName ();
-
-        final Locator locator = new Locator ( element ,classname );
-
-        try {
-            new WebDriverWait ( driver , locator.getWaittime () ).until(new ExpectedCondition<List<WebElement>>() {
-                @Override
-                public List<WebElement> apply( WebDriver webDriver ) {
-                    List<WebElement> element ;
-                    switch ( locator.getByType()) {
-                        case id:
-                            element = driver.findElements ( By.id ( locator.getElement () ) );
-                            break;
-                        case name:
-                            element = driver.findElements ( By.name ( locator.getElement () ) );
-                            break;
-                        case xpath:
-                            element = driver.findElements ( By.xpath ( locator.getElement () ) );
-                            break;
-                        case tagName:
-                            element = driver.findElements ( By.tagName ( locator.getElement () ) );
-                            break;
-                        case linkText:
-                            element = driver.findElements ( By.linkText ( locator.getElement () ) );
-                            break;
-                        case className:
-                            element = driver.findElements ( By.className ( locator.getElement () ) );
-                            break;
-                        case cssSelector:
-                            element = driver.findElements ( By.cssSelector ( locator.getElement () ) );
-                            break;
-                        case partialLinkText:
-                            element = driver.findElements ( By.partialLinkText ( locator.getElement () ) );
-                            break;
-                        default:
-                            element = driver.findElements ( By.id ( locator.getElement () ) );
-                            break;
-                    }
-                    return element ;
-                }
-            });
-            return true;
-        } catch ( Exception e ){
-            log.error( "【元素不存在】" + locator.getLocation() + " : " + locator.getElement() ,screenShot ());
+        if ( findElement ( element ) == null || findElements ( element ) == null ){
+            log.info ( "【元素不存在】" + element ,screenShot ());
             return false;
+        } else {
+            log.info ( "【元素存在】" + element ,screenShot ());
+            return true;
         }
+
+//        String classname = this.getClass ().getSimpleName ();
+//
+//        final Locator locator = new Locator ( element ,classname );
+//
+//        try {
+//            new WebDriverWait ( driver , locator.getWaittime () ).until(new ExpectedCondition<List<WebElement>>() {
+//                @Override
+//                public List<WebElement> apply( WebDriver webDriver ) {
+//                    List<WebElement> element ;
+//                    switch ( locator.getByType()) {
+//                        case id:
+//                            element = driver.findElements ( By.id ( locator.getElement () ) );
+//                            break;
+//                        case name:
+//                            element = driver.findElements ( By.name ( locator.getElement () ) );
+//                            break;
+//                        case xpath:
+//                            element = driver.findElements ( By.xpath ( locator.getElement () ) );
+//                            break;
+//                        case tagName:
+//                            element = driver.findElements ( By.tagName ( locator.getElement () ) );
+//                            break;
+//                        case linkText:
+//                            element = driver.findElements ( By.linkText ( locator.getElement () ) );
+//                            break;
+//                        case className:
+//                            element = driver.findElements ( By.className ( locator.getElement () ) );
+//                            break;
+//                        case cssSelector:
+//                            element = driver.findElements ( By.cssSelector ( locator.getElement () ) );
+//                            break;
+//                        case partialLinkText:
+//                            element = driver.findElements ( By.partialLinkText ( locator.getElement () ) );
+//                            break;
+//                        default:
+//                            element = driver.findElements ( By.id ( locator.getElement () ) );
+//                            break;
+//                    }
+//                    return element ;
+//                }
+//            });
+//            return true;
+//        } catch ( Exception e ){
+//            log.error( "【元素不存在】" + locator.getLocation() + " : " + locator.getElement() ,screenShot ());
+//            return false;
+//        }
     }
 
     /**
@@ -215,8 +223,8 @@ public class AppElement extends AppAction {
      * @param locator
      */
     public void click( String locator ){
-        findElement ( locator ).click ();
 
+        findElement ( locator ).click ();
         log.info ( "【点击】 ： " + locator ,screenShot ());
     }
 
@@ -226,9 +234,12 @@ public class AppElement extends AppAction {
      * @param index
      */
     public void listClick( String locator , int index ){
-        findElements ( locator ).get ( index ).click ();
-        log.info ( "【点击】 ： " + locator ,screenShot ());
-
+        if ( index < findElements ( locator ).size () ){
+            findElements ( locator ).get ( index ).click ();
+            log.info ( "【点击】 ： " + locator ,screenShot ());
+        } else {
+            log.error ( "【控件不存在】 ： " + locator , screenShot () );
+        }
     }
 
     /**

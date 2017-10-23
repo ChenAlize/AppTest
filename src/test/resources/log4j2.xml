@@ -5,10 +5,10 @@
         <!-- 输出样式 -->
         <Property name="Console_pattern">[%d{yyyy-MM-dd HH:mm:ss z}] [%t] [%M] -%msg%n</Property>
         <!-- 输出路径 -->
-        <Property name="file_name">logs/benlai.log</Property>
+        <Property name="file_name">test-output/benlai.log</Property>
         <!-- <Property name="info_name">logs/Info.log</Property> -->
         <!-- 备份路径 -->
-        <Property name="rolling_file">logs/$${date:yyyy-MM}/%d{yyyy-MM-dd}-.log</Property>
+        <Property name="rolling_file">test-output/$${date:yyyy-MM}/%d{yyyy-MM-dd}-.log</Property>
         <!-- <Property name="rolling_info">logs/$${date:yyyy-MM}/Info-%d{yyy-MM-dd}-%i.log.gz</Property> -->
         <!-- 日志最小切割单位 -->
         <Property name="file_size">20 MB</Property>
