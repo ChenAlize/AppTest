@@ -14,7 +14,7 @@ public class MainAct extends ActBase {
      * 进入个人中心
      */
     public void toUserHome(){
-        if ( mainAty.isPackage()){ mainAty.clickPackageClose(); }
+        mainAty.clickPackageClose();
         mainAty.clickUserHome();
     }
 
@@ -22,9 +22,12 @@ public class MainAct extends ActBase {
      * 进入城市
      */
     public void toCity(){
-        if ( mainAty.isPackage() ){
-            mainAty.clickPackageClose();
-        }
+        mainAty.clickPackageClose();
         mainAty.clickTvCity();
+    }
+
+    public void toCateGory(){
+        mainAty.clickPackageClose ();
+        mainAty.clickCategory ();
     }
 }

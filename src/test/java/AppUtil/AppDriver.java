@@ -18,9 +18,11 @@ public class AppDriver {
 
     public AndroidDriver driver;
 
-    public AppConfig config = new AppConfig ( "HAWEI mate 9" );
+
     //启动app，获取derver
-    public AndroidDriver getDriver(){
+    public AndroidDriver getAppDriver( String phoneModels ){
+
+        AppConfig config = new AppConfig ( phoneModels );
 
         DesiredCapabilities des = new DesiredCapabilities (  );
         //设备配置

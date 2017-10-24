@@ -20,7 +20,7 @@ public class LoginAct extends ActBase {
             loginAty.clickPWLogin ();
             loginAty.inputUserNmae ();
             loginAty.inputPassWord ();
-            loginAty.back ();
+            loginAty.hideKey ();
             loginAty.clickBPWLogin ();
             Config.setIsLogin ( true );
     }

@@ -10,33 +10,32 @@ public class Initialize {
 
     public Log log;
 
-    @BeforeSuite
-    public void beforeSuite() {
-    }
-
     @BeforeClass
     public void beforeClass() {
-        System.out.println( " 1 ===== 测试开始：  " + this.getClass().getSimpleName() );
+
         log = new Log();
         log.createTest( this.getClass() );
+        System.out.println( " ===== 测试开始：  " + this.getClass().getSimpleName() + "初始化报表！");
     }
 
     @BeforeMethod
     public void beforeMethod( Method method ) {
-        System.out.println( " 5 ===== 执行测试方法：  " + method.getName() );
+
         log.addNode( method );
+        System.out.println( " ===== 执行测试方法：  " + method.getName() + "添加报表节点");
     }
 
     @AfterMethod
     public void afterMethod(ITestResult result) {
-        log.flush();
-        System.out.println( " ===== 测试方法结束：  " + result.getName() );
+        log.flush( result );
+        System.out.println( " ===== 测试方法结束：  " + result.getName() + "写入报表日志");
     }
 
     @AfterClass
     public void aftrtClass(){
-        System.out.println( " ===== 测试结束：  " + this.getClass().getSimpleName() );
+
         log.close();
+        System.out.println( " ===== 测试结束：  " + this.getClass().getSimpleName() + "清空Extent资源" );
     }
 
 }

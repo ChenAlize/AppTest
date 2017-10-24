@@ -10,9 +10,9 @@ public class AppTest{
 
     public static AndroidDriver driver;
 
-    public static void  init(){
+    public static void  init( String phoneModels ){
         AppDriver appdriver = new AppDriver ();
-        driver = appdriver.getDriver ();
+        driver = appdriver.getAppDriver ( phoneModels );
     }
 
     public static void end(){ driver.quit (); }

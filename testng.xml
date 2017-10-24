@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "Suite" parallel = "false" >
-    <test name = "Test" >
+<suite name = "App Test Suite" parallel = "false" >
+
+    <test name = "Test" preserve-order="true" >
         <classes>
-            <class name = "TestCase.com.Benlai.LoginTest"/>
+            <class name="TestCase.com.Benlai.Start_App"/>
+            <class name="TestCase.com.Benlai.ChangeCity"/>
+            <class name="TestCase.com.Benlai.ProductList"/>
+            <!--<class name = "TestCase.com.Benlai.LoginTest"/>-->
         </classes>
     </test>
 </suite>

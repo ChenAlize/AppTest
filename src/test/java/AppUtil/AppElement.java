@@ -2,6 +2,7 @@ package AppUtil;
 
 import AppData.Locator;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.functions.ExpectedCondition;
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.lang.model.element.Element;
 import java.util.List;
 
 /**
@@ -33,7 +35,10 @@ public class AppElement extends AppAction {
                     element = driver.findElement ( By.id ( locator.getElement () ) );
                     break;
                 case name:
-                    element = driver.findElement ( By.name ( locator.getElement () ) );
+                    element = driver.findElementByAccessibilityId ( locator.getElement () );
+                    if ( element == null ){
+                        element = driver.findElement( By.name ( locator.getElement () ));
+                    }
                     break;
                 case xpath:
                     element = driver.findElement ( By.xpath ( locator.getElement () ) );
@@ -77,7 +82,7 @@ public class AppElement extends AppAction {
                     element = driver.findElements ( By.id ( locator.getElement () ) );
                     break;
                 case name:
-                    element = driver.findElements ( By.name ( locator.getElement () ) );
+                    element = driver.findElementsByAccessibilityId ( locator.getElement () );
                     break;
                 case xpath:
                     element = driver.findElements ( By.xpath ( locator.getElement () ) );
@@ -114,8 +119,10 @@ public class AppElement extends AppAction {
      * @return
      */
     public WebElement findElement (final String element ){
+
         String classname = this.getClass ().getSimpleName ();
         final Locator locator = new Locator ( element ,classname );
+
         WebDriverWait wait = new WebDriverWait ( driver , locator.getWaittime () );
         WebElement Androidelement = null;
         try {
@@ -169,53 +176,6 @@ public class AppElement extends AppAction {
             log.info ( "【元素存在】" + element ,screenShot ());
             return true;
         }
-
-//        String classname = this.getClass ().getSimpleName ();
-//
-//        final Locator locator = new Locator ( element ,classname );
-//
-//        try {
-//            new WebDriverWait ( driver , locator.getWaittime () ).until(new ExpectedCondition<List<WebElement>>() {
-//                @Override
-//                public List<WebElement> apply( WebDriver webDriver ) {
-//                    List<WebElement> element ;
-//                    switch ( locator.getByType()) {
-//                        case id:
-//                            element = driver.findElements ( By.id ( locator.getElement () ) );
-//                            break;
-//                        case name:
-//                            element = driver.findElements ( By.name ( locator.getElement () ) );
-//                            break;
-//                        case xpath:
-//                            element = driver.findElements ( By.xpath ( locator.getElement () ) );
-//                            break;
-//                        case tagName:
-//                            element = driver.findElements ( By.tagName ( locator.getElement () ) );
-//                            break;
-//                        case linkText:
-//                            element = driver.findElements ( By.linkText ( locator.getElement () ) );
-//                            break;
-//                        case className:
-//                            element = driver.findElements ( By.className ( locator.getElement () ) );
-//                            break;
-//                        case cssSelector:
-//                            element = driver.findElements ( By.cssSelector ( locator.getElement () ) );
-//                            break;
-//                        case partialLinkText:
-//                            element = driver.findElements ( By.partialLinkText ( locator.getElement () ) );
-//                            break;
-//                        default:
-//                            element = driver.findElements ( By.id ( locator.getElement () ) );
-//                            break;
-//                    }
-//                    return element ;
-//                }
-//            });
-//            return true;
-//        } catch ( Exception e ){
-//            log.error( "【元素不存在】" + locator.getLocation() + " : " + locator.getElement() ,screenShot ());
-//            return false;
-//        }
     }
 
     /**
@@ -223,9 +183,13 @@ public class AppElement extends AppAction {
      * @param locator
      */
     public void click( String locator ){
-
-        findElement ( locator ).click ();
-        log.info ( "【点击】 ： " + locator ,screenShot ());
+        WebElement element = findElement ( locator );
+        if ( element == null ){
+            log.info ( "【元素不存在】"  ,screenShot ());
+        } else {
+            element.click ();
+            log.info ( "【点击】 ： " + locator, screenShot () );
+        }
     }
 
     /**
@@ -234,8 +198,9 @@ public class AppElement extends AppAction {
      * @param index
      */
     public void listClick( String locator , int index ){
-        if ( index < findElements ( locator ).size () ){
-            findElements ( locator ).get ( index ).click ();
+        List<WebElement> elements = findElements ( locator );
+        if ( index < elements.size () || elements == null ){
+            elements.get ( index ).click ();
             log.info ( "【点击】 ： " + locator ,screenShot ());
         } else {
             log.error ( "【控件不存在】 ： " + locator , screenShot () );
@@ -246,10 +211,16 @@ public class AppElement extends AppAction {
      * 在元素内输入参数
      * @param locator
      */
-    public void typing( String locator , String element ){
-        findElement ( locator ).sendKeys ( element );
-        log.info ( "【输入】  " +  locator +  " : " + element ,screenShot ());
+    public void typing( String locator , String input ){
 
+        WebElement element = findElement ( locator );
+
+        if ( element == null || input == null || input.equals ( "" ) ) {
+            log.info ( "【元素不存在】" + element ,screenShot ());
+        } else {
+            element.sendKeys ( input );
+            log.info ( "【输入】  " + locator + " : " + input, screenShot () );
+        }
     }
 
     /**
@@ -258,9 +229,14 @@ public class AppElement extends AppAction {
      * @return
      */
     public String getText( String locator ){
-        String text = findElement ( locator ).getText ();
-        log.info (  "【获取文本】 ： " + text ,screenShot ());
-
+        WebElement element = findElement ( locator );
+        String text = null;
+        if ( element != null ) {
+             text = element.getText ();
+             log.info (  "【获取文本】 ： " + text ,screenShot ());
+        } else {
+            log.info ( "【元素不存在】" + element ,screenShot ());
+        }
         return text;
     }
 
@@ -283,6 +259,13 @@ public class AppElement extends AppAction {
     public void back(){
         driver.pressKeyCode ( AndroidKeyCode.BACK );
         log.info ( "【返回】" , screenShot ());
+    }
+
+    /**
+     * 收起键盘
+     */
+    public void hideKey(){
+        driver.hideKeyboard ();
     }
 
 }

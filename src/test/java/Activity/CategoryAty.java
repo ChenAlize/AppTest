@@ -4,30 +4,14 @@ import AppUtil.AppElement;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
- * Created by chenbo on 2017/10/11.
+ * Created by chenbo on 2017/10/24.
  */
-public class MainAty extends AppElement {
+public class CategoryAty extends AppElement{
 
-    public MainAty(AndroidDriver driver) {
+    public CategoryAty(AndroidDriver driver) {
         super ( driver );
     }
 
-    public boolean isPackage(){
-       return isExist( "立即领取" );
-    }
-
-    /**
-     * 点击——立即领取
-     */
-    public void clickPackageGo(){
-        click ( "立即领取" );
-    }
-    /**
-     * 点击——关闭红包
-     */
-    public void clickPackageClose(){
-        click ( "关闭红包" );
-    }
     /**
      * 点击--首页
      */
@@ -58,6 +42,7 @@ public class MainAty extends AppElement {
     public void clickUserHome(){
         click ( "我的本来" );
     }
+
     /**
      * 点击--切站
      */
@@ -82,15 +67,27 @@ public class MainAty extends AppElement {
     public void clickIvCenterMsg(){
         click ( "消息中心" );
     }
+
     /**
-     * 获取--推荐Tab的text
+     * 大类--镇店之宝
      */
-    public String getRecommend(){
-        return getListText ( "Tab" , 0 );
+    public void clickTopOne (){
+        click ( "镇店之宝" );
     }
 
-    public boolean isTab(){
-        return isExist( "水产" );
+    /**
+     * 大类--水果
+     */
+    public void clickFruits (){
+        click ( "水果" );
+    }
+
+    /**
+     * 第一个小类
+     * @param index
+     */
+    public void clickSmallClass ( int index ) {
+        listClick ( "小类" , index );
     }
 
 

@@ -2,7 +2,7 @@
 <appconfig>
 
 	<!--华为-->
-	<cellphone name="HAWEI mate 9">
+	<cellphone name="HAWEI Mate 9">
 		<appValue>3.3.0</appValue>
 		<appPackage>com.android.benlailife.activity</appPackage>
 		<appActivity>com.android.benlai.activity.WelcomeActivity</appActivity>
