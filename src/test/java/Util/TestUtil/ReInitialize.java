@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 
-public class Initialize {
+public class ReInitialize {
 
     public Log log;
 

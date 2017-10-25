@@ -13,15 +13,11 @@ public class CategoryAct extends ActBase{
         super ( driver );
     }
 
-    CategoryAty categoryAty = new CategoryAty ( driver );
+    public CategoryAty categoryAty = new CategoryAty ( driver );
 
     /**
-     * 进入城市
+     * 进入商品列表
      */
-    public void toCity(){
-        categoryAty.clickTvCity();
-    }
-
     public void toProductList(){
         categoryAty.clickTopOne ();
         categoryAty.clickSmallClass ( 0 );

@@ -11,7 +11,7 @@ public class MainAct extends ActBase {
     public MainAty mainAty = new MainAty( driver );
 
     /**
-     * 进入个人中心
+     * 启动进入个人中心
      */
     public void toUserHome(){
         mainAty.clickPackageClose();
@@ -19,13 +19,16 @@ public class MainAct extends ActBase {
     }
 
     /**
-     * 进入城市
+     * 启动进入城市列表
      */
     public void toCity(){
         mainAty.clickPackageClose();
         mainAty.clickTvCity();
     }
 
+    /**
+     * 启动进入分类
+     */
     public void toCateGory(){
         mainAty.clickPackageClose ();
         mainAty.clickCategory ();

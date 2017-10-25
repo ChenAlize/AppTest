@@ -4,7 +4,7 @@
 
     <test name = "Test" preserve-order="true" >
         <classes>
-            <class name="TestCase.com.Benlai.Start_App"/>
+            <!--<class name="TestCase.com.Benlai.Start_App"/>-->
             <class name="TestCase.com.Benlai.ChangeCity"/>
             <class name="TestCase.com.Benlai.ProductList"/>
             <!--<class name = "TestCase.com.Benlai.LoginTest"/>-->

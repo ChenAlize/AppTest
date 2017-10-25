@@ -13,13 +13,13 @@ public class UserHomeAct extends ActBase{
         super ( driver );
     }
 
-    UserHomeAty homeAty = new UserHomeAty ( driver );
+    public UserHomeAty userHomeAty = new UserHomeAty ( driver );
 
     public void login(){
         if ( Config.getIsLogin () ){
             log.pass ( "【你已经是登录状态！】" );
         } else {
-            homeAty.clickCenterLogin ();
+            userHomeAty.clickCenterLogin ();
         }
     }
 }

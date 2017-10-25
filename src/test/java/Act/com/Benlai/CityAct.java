@@ -16,17 +16,17 @@ public class CityAct extends ActBase{
     CityAty cityAty = new CityAty ( driver );
 
     public void toBeiJing(){
-        log.info ( "【查看】 ：" + cityAty.nowCity () , cityAty.screenShot () );
+
         cityAty.hotCity ( "北京" );
     }
 
     public void toShangHai(){
-        log.info ( "【查看】 ：" + cityAty.nowCity () , cityAty.screenShot () );
+
         cityAty.hotCity ( "上海" );
     }
 
     public void toGuangZhou(){
-        log.info ( "【查看】 ：" + cityAty.nowCity () , cityAty.screenShot () );
+
         cityAty.hotCity ( "广州" );
     }
 

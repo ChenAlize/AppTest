@@ -51,4 +51,25 @@ public class UserHomeAty extends AppElement {
     public void clickUserHome(){
         click ( "我的本来" );
     }
+    /**
+     * 点击--切站
+     */
+    public void clickTvCity(){
+        click ( "点击切站" );
+    }
+    /**
+     * 点击--设置
+     */
+    public void clickSetting(){
+        click ( "设置" );
+    }
+    /**
+     * 点击--个人头像
+     */
+    public void clickUserPortrait(){ click ( "个人头像" ); }
+    /**
+     * 获取昵称
+     * @return
+     */
+    public String getNickName() { return getText ( "昵称" );}
 }
