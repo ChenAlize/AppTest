@@ -1,66 +1,14 @@
-[2017-10-25 13:51:59 CST] [main] [] -[错误] 【Fail】 ：返回true断言失败！
-期望值：True
-实际值：false
-[2017-10-25 14:10:13 CST] [main] [] -[信息] 【Pass】 : 111 断言成立！ 
-[2017-10-25 14:10:38 CST] [main] [] -[错误] 【Fail】 ：111断言失败！
-期望值：1
-实际值：1
-[2017-10-25 14:14:07 CST] [main] [] -[错误] 【Fail】 ：111断言失败！
-期望值：1
-实际值：1
-[2017-10-25 14:19:10 CST] [main] [] -[信息] 【Pass】 : 111 断言成立！ 
-[2017-10-25 14:19:27 CST] [main] [] -[信息] 【Pass】 : 111 断言成立！ 
-[2017-10-25 14:20:37 CST] [main] [] -[信息] 【Pass】 : 111 断言成立！ 
-[2017-10-25 14:20:53 CST] [main] [] -[错误] 【Fail】 ：111断言失败！
-期望值：[I@4b45a2f5
-实际值：[I@f09733f
-[2017-10-25 19:54:44 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
-[2017-10-25 19:54:45 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
-[2017-10-25 19:54:45 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
-[2017-10-25 19:54:45 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
-[2017-10-25 19:54:45 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
-[2017-10-25 19:54:45 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
-[2017-10-25 19:54:45 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
-[2017-10-25 19:54:47 CST] [main] [] -[错误] 【获取 AndroidDriver 失败！】
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
-[2017-10-25 19:56:21 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
-[2017-10-25 19:56:52 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-25 19:56:59 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-25 19:57:06 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
-[2017-10-25 19:57:14 CST] [main] [] -[信息] 【点击坐标】 ： ( 527 , 1149 )
-[2017-10-25 19:57:21 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 19:57:29 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 19:57:37 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
-[2017-10-25 20:03:48 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
-[2017-10-25 20:04:17 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-25 20:04:25 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-25 20:04:32 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
-[2017-10-25 20:04:39 CST] [main] [] -[信息] 【点击坐标】 ： ( 527 , 1149 )
-[2017-10-25 20:04:47 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 20:04:55 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 20:05:03 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
-[2017-10-25 20:05:46 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
-[2017-10-25 20:06:12 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-25 20:06:19 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-25 20:06:26 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
-[2017-10-25 20:06:35 CST] [main] [] -[信息] 【点击坐标】 ： ( 527 , 1149 )
-[2017-10-25 20:06:45 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 20:06:54 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-25 20:07:03 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
+[2017-10-27 13:31:56 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
+[2017-10-27 13:32:30 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-10-27 13:32:38 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-10-27 13:32:46 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
+[2017-10-27 13:32:54 CST] [main] [] -[信息] 【点击坐标】 ： ( 527 , 1149 )
+[2017-10-27 13:33:01 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
+[2017-10-27 13:33:13 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
+[2017-10-27 13:33:22 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )

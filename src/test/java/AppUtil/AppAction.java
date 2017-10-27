@@ -2,14 +2,13 @@ package AppUtil;
 
 import AppData.AppConfig;
 import Util.Logger.Log;
+import Util.ReFile.ReDate;
 import io.appium.java_client.android.AndroidDriver;
 import org.aspectj.util.FileUtil;
 import org.openqa.selenium.OutputType;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by chenbo on 2017/10/18.
@@ -58,7 +57,7 @@ public class AppAction {
      */
     public java.lang.String screenShot ( ) {
         File screenShot = driver.getScreenshotAs ( OutputType.FILE );
-        java.lang.String screenCast = AppConfig.getLogPath () + "/screenSho/"+data ()+".jpg" ;
+        java.lang.String screenCast = AppConfig.getLogPath () + "/screenSho/"+ ReDate.nowData ()+".jpg" ;
         try {
 
             FileUtil.copyFile ( screenShot , new File ( screenCast ) );
@@ -68,14 +67,6 @@ public class AppAction {
             e.printStackTrace ();
         }
         return screenCast;
-    }
-
-    /**
-     * 获取时间格式
-     */
-    public java.lang.String data ( ) {
-        Date date = new Date();
-        return new SimpleDateFormat ("yyyy_MM_dd_HH_mm_ss").format(date);
     }
 
     /**
