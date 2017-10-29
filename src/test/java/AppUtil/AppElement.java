@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by chenbo on 2017/10/19.
  */
-public class AppElement extends AppAction {
+public class AppElement extends AppKey {
 
     public AppElement(AndroidDriver driver) {
         super ( driver );
@@ -251,21 +251,6 @@ public class AppElement extends AppAction {
         log.info (  "【获取文本】 ： " + text ,screenShot ());
 
         return text;
-    }
-
-    /**
-     * 按键：返回
-     */
-    public void back(){
-        driver.pressKeyCode ( AndroidKeyCode.BACK );
-        log.info ( "【返回】" , screenShot ());
-    }
-
-    /**
-     * 收起键盘
-     */
-    public void hideKey(){
-        driver.hideKeyboard ();
     }
 
 }

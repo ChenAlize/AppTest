@@ -1,6 +1,7 @@
 package AppUtil;
 
 import Util.Logger.Log;
+import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.lang.reflect.Constructor;
@@ -30,10 +31,25 @@ public class ActivityFactory {
             Constructor constructor = claxx.getConstructor ( AndroidDriver.class );
             //object指向类对象
             object = constructor.newInstance ( driver );
+
+//            /**
+//             * 将当前页面元素信息写入XML文件中
+//             */
+//            //获取当前activity
+//            String activity = driver.currentActivity();
+//            logger.info("【当前】：" + activity );
+//            //获取当前页面元素信息
+//            String pageElement = driver.getPageSource();
+//            System.out.println( pageElement );
+//            //生成xml文件
+//            String path = ReFile.createFile( activity , "xml" );
+//            //将当前页面元素信息写入XML文件中
+//            ReFile.write( pageElement , path );
+
         } catch (Exception e) {
             logger.error ( "【页面跳转失败】  目标页面： " + classname );
         }
-        logger.info ( "【页面跳转成功】"  + classname );
+        logger.info ( "【页面跳转成功】" );
         return object;
     }
 }

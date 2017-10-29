@@ -17,12 +17,6 @@ public class LoginTest extends ReInitialize {
     @Test(enabled = true  , priority = 3 )
     public void LoginTest(){
         AppTest.init ( "HAWEI Mate 9" );
-        WelcomeAct welcomeAct = new WelcomeAct ( AppTest.driver );
-        welcomeAct.welcome ();
-        //首页操作 ---  进入个人中心
-        MainAct mainAct = new MainAct( AppTest.driver );
-        mainAct.toUserHome ();
-        //未登录状态 ---- 点击登录
         UserHomeAct userHomeAct = new UserHomeAct ( AppTest.driver );
         userHomeAct.userHomeAty.clickCenterLogin ();
         //帐号密码登录

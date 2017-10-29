@@ -14,15 +14,32 @@ public class ReString {
      * @param str
      * @return
      */
-    public static List<String> folder( String str ){
+    public static List<String> folderPoint( String str , int index ){
 
         //String.split() 分割字符串到数组
         String[] s = str.split ( "\\." );
         List<String> stringList = new ArrayList <String> ();
-        for ( int i = 0 ; i< s.length ; i++ ){
+        for ( int i = 0 ; i< s.length + index ; i++ ){
             stringList.add ( s[i] );
         }
         return stringList;
+    }
+
+    /**
+     * 当前目录下创建文件路径
+     * @param pageName
+     * @return
+     */
+    public static String pathFile ( String pageName , String pathtype ) {
+        String path = System.getProperty ( "user.dir" );
+        List<String> list = ReString.folderPoint ( pageName , 0 );
+        String suffix = suffix( ReFile.fileType( pathtype ) );
+
+        for ( String i : list ){
+            String fileStr = File.separator + i ;
+            path = path + fileStr;
+        }
+       return path + suffix;
     }
 
     /**
@@ -30,15 +47,17 @@ public class ReString {
      * @param pageName
      * @return
      */
-    public static String pathUrl ( String pageName ) {
+    public static String pathDir ( String pageName ) {
         String path = System.getProperty ( "user.dir" );
-        List<String> list = ReString.folder ( pageName );
+        List<String> list = ReString.folderPoint ( pageName , -1 );
         for ( String i : list ){
             String fileStr = File.separator + i ;
             path = path + fileStr;
         }
-       return path;
+        return path;
     }
+
+
 
     /**
      * 生成对应的后缀名

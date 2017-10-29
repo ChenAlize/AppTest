@@ -24,6 +24,7 @@ public class Log {
     public Log(){}
 
     /**
+     *  2282440078.Q
      * 初始化log
      * @param clacc
      */

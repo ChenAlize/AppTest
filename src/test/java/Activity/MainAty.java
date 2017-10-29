@@ -12,6 +12,10 @@ public class MainAty extends AppElement {
         super ( driver );
     }
 
+    public AndroidDriver getDriver (){
+        return driver;
+    }
+
     public boolean isPackage(){
        return isExist( "立即领取" );
     }

@@ -2,6 +2,7 @@ package AppUtil;
 
 import AppData.AppConfig;
 import Util.Logger.Log;
+import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
@@ -14,9 +15,9 @@ import java.net.URL;
  */
 public class AppDriver {
 
-    public Log log = new Log ( this.getClass () );
+    private static Log log = new Log ( AppDriver.class );
 
-    public AndroidDriver driver;
+    private static AndroidDriver driver;
 
 
     //启动app，获取derver
@@ -49,5 +50,7 @@ public class AppDriver {
         }
         return driver;
     }
+
+
 
 }

@@ -14,6 +14,10 @@ public class WelcomeAty extends AppElement {
     public WelcomeAty(AndroidDriver driver) {
         super ( driver );
     }
+
+    public AndroidDriver getDriver () {
+        return driver;
+    }
     //       向左滑动2次
     public void liftRow(){
         for(int i=0 ; i < 2 ; i++) {

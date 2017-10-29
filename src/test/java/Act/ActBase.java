@@ -2,6 +2,8 @@ package Act;
 
 import AppData.AppConfig;
 import Util.Logger.Log;
+import Util.ReFile.ReFile;
+import Util.ReFile.ReString;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.util.concurrent.TimeUnit;

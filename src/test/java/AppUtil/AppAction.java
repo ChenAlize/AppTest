@@ -57,7 +57,7 @@ public class AppAction {
      */
     public java.lang.String screenShot ( ) {
         File screenShot = driver.getScreenshotAs ( OutputType.FILE );
-        java.lang.String screenCast = AppConfig.getLogPath () + "/screenSho/"+ ReDate.nowData ()+".jpg" ;
+        java.lang.String screenCast = AppConfig.getLogPath () + "/screenSho/"+ ReDate.nowData ()+".png" ;
         try {
 
             FileUtil.copyFile ( screenShot , new File ( screenCast ) );
@@ -84,6 +84,5 @@ public class AppAction {
             e.printStackTrace ();
         }
     }
-
 
 }
