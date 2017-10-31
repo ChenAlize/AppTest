@@ -1,6 +1,7 @@
 package Activity;
 
 import AppUtil.AppElement;
+import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
@@ -17,18 +18,22 @@ public class LoginAty extends AppElement {
     }
 
     public void clickPWLogin(){
+        ReFile.writePage ( driver , "LoginAty" );
         click ( "密码登录" );
     }
 
-    public void inputUserNmae(){
-        typing ( "用户名" , "13508496358" );
+    public void inputUserNmae( String userName ){
+
+        typing ( "用户名" , userName );
     }
 
-    public void inputPassWord(){
-        typing ( "密码" , "qwe123456" );
+    public void inputPassWord( String passWord ){
+
+        typing ( "密码" , passWord );
     }
 
     public void clickBPWLogin(){
+
         click ( "密码登录btn" );
     }
 }

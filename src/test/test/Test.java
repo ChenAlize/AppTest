@@ -1,10 +1,13 @@
 import Util.ReDB.JdbcLink;
 import Util.ReFile.ReFile;
 import Util.ReFile.ReString;
+import Util.Read.ReadXml;
 import Util.TestUtil.ReInitialize;
-import org.apache.commons.io.FileUtils;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
 
-import java.io.*;
+import java.awt.*;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -15,12 +18,35 @@ import java.util.*;
 public class Test extends ReInitialize{
 
 
-    @org.testng.annotations.Test(enabled = true)
-    public void write() throws IOException {
+    @org.testng.annotations.Test(enabled = true )
+    public void  readerXml() throws DocumentException {
+        String  path = "D:\\IdeaProjects\\AppTest\\com\\android\\benlai\\activity\\main\\MainActivity\\Package.xml";
+        ReadXml readXml = new ReadXml ( path );
+        Element root = readXml.getRootElement ();
+        java.util.List <Element> element = readXml.selectNode ( root , "android.widget.Button" );
+        for ( Element e : element  ){
+            System.out.println ( e.attributeValue ( "text" ) );
+        }
+    }
+
+
+
+
+
+    /**
+     * 写入文件
+     */
+    @org.testng.annotations.Test(enabled = false)
+    public void write(){
 
         String pageName = "com.android.benlai.activity.main.MainActivity";
-
-        String element = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<hierarchy rotation=\"0\">\n<android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"1\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"android:id/content\" instance=\"2\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1308]\" resource-id=\"com.android.benlailife.activity:id/iv_dialog_red_package_image\" instance=\"0\"/><android.widget.Button index=\"1\" text=\"立即领取\" class=\"android.widget.Button\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,1008][753,1116]\" resource-id=\"com.android.benlailife.activity:id/btn_dialog_red_package_go\" instance=\"0\"/><android.widget.ImageButton index=\"2\" text=\"\" class=\"android.widget.ImageButton\" package=\"com.android.benlailife.activity\" content-desc=\"关闭\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[496,1452][583,1539]\" resource-id=\"com.android.benlailife.activity:id/ib_dialog_red_package_close\" instance=\"0\"/></android.widget.RelativeLayout></android.widget.FrameLayout></android.widget.FrameLayout></android.widget.FrameLayout></hierarchy>";
+        String element = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><hierarchy rotation=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"1\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"android:id/content\" instance=\"2\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1308]\" resource-id=\"com.android.benlailife.activity:id/iv_dialog_red_package_image\" instance=\"0\"/><android.widget.Button index=\"1\" text=\"立即领取\" class=\"android.widget.Button\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,1008][753,1116]\" resource-id=\"com.android.benlailife.activity:id/btn_dialog_red_package_go\" instance=\"0\"/><android.widget.ImageButton index=\"2\" text=\"\" class=\"android.widget.ImageButton\" package=\"com.android.benlailife.activity\" content-desc=\"关闭\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[496,1452][583,1539]\" resource-id=\"com.android.benlailife.activity:id/ib_dialog_red_package_close\" instance=\"0\"/></android.widget.RelativeLayout></android.widget.FrameLayout></android.widget.FrameLayout></android.widget.FrameLayout></hierarchy>";
+        String path = pageName + File.separator + this.getClass ().getSimpleName ();
+        String pathDir = ReString.pathDir ( pageName );
+        String pathFile = ReString.pathFile ( path , "xml" );
+//        ReFile.createDir ( pathDir );
+        ReFile.write ( element , pathFile  );
+        System.out.println ( pathFile );
 
     }
 

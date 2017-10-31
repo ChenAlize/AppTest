@@ -1,6 +1,7 @@
 package Activity;
 
 import AppUtil.AppElement;
+import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
@@ -14,10 +15,15 @@ public class UserHomeAty extends AppElement {
         super ( driver );
     }
 
+    public AndroidDriver getDriver (){
+        return driver;
+    }
+
     /**
      * 点击：登录注册 按钮
      */
     public void clickCenterLogin(){
+        ReFile.writePage ( driver , "UserHomeAty" );
         click ( "登录注册" );
     }
 

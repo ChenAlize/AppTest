@@ -49,7 +49,7 @@ public class ReString {
      */
     public static String pathDir ( String pageName ) {
         String path = System.getProperty ( "user.dir" );
-        List<String> list = ReString.folderPoint ( pageName , -1 );
+        List<String> list = ReString.folderPoint ( pageName , 0 );
         for ( String i : list ){
             String fileStr = File.separator + i ;
             path = path + fileStr;

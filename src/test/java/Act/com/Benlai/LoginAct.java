@@ -18,8 +18,8 @@ public class LoginAct extends ActBase {
 
     public void Login(){
             loginAty.clickPWLogin ();
-            loginAty.inputUserNmae ();
-            loginAty.inputPassWord ();
+            loginAty.inputUserNmae ("13508496358");
+            loginAty.inputPassWord ("qwe123456");
             loginAty.hideKey ();
             loginAty.clickBPWLogin ();
             Config.setIsLogin ( true );

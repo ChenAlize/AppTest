@@ -1,6 +1,7 @@
 package Activity;
 
 import AppUtil.AppElement;
+import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
@@ -30,6 +31,7 @@ public class MainAty extends AppElement {
      * 点击——关闭红包
      */
     public void clickPackageClose(){
+        ReFile.writePage ( driver, "Package" );
         click ( "关闭红包" );
     }
     /**
@@ -42,6 +44,7 @@ public class MainAty extends AppElement {
      * 点击--分类
      */
     public void clickCategory(){
+
         click ( "分类" );
     }
     /**
@@ -60,6 +63,7 @@ public class MainAty extends AppElement {
      * 点击——我的本来
      */
     public void clickUserHome(){
+        ReFile.writePage ( driver, "MainAty" );
         click ( "我的本来" );
     }
     /**

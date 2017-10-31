@@ -1,5 +1,7 @@
 package Util.ReFile;
 
+import io.appium.java_client.android.AndroidDriver;
+
 import java.io.*;
 
 /**
@@ -47,7 +49,7 @@ public class ReFile {
     }
 
     /**
-     * 创建XML文件
+     * 创建文件
      */
     public static String createFile( String Activity , String filetype ){
         String files = ReString.pathFile( Activity , filetype );
@@ -93,4 +95,25 @@ public class ReFile {
         }
     }
 
+    /**
+     * x写入页面元素到指定文件
+     * @param driver
+     * @param clazzname
+     */
+    public static String writePage(AndroidDriver driver , String clazzname ){
+        String pageName = driver.currentActivity ();
+        String element = driver.getPageSource ();
+        String pathFile = null;
+        if ( pageName!=null && element!=null && !pageName.equals ( "" ) && !element.equals ( "" )){
+
+            String path = pageName + File.separator + clazzname;
+            String pathDir = ReString.pathDir ( pageName );
+            pathFile = ReString.pathFile ( path , "xml" );
+            createDir ( pathDir );
+            write ( element , pathFile  );
+            System.out.println ( pathFile );
+            System.out.println ( element );
+        }
+        return pathFile;
+    }
 }

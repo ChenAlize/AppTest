@@ -3,6 +3,7 @@ package TestCase.com.Benlai;
 import Act.com.Benlai.MainAct;
 import Act.com.Benlai.UserHomeAct;
 import Act.com.Benlai.WelcomeAct;
+import Activity.LoginAty;
 import Activity.MainAty;
 import Activity.UserHomeAty;
 import Activity.WelcomeAty;
@@ -25,13 +26,17 @@ public class Start_App extends ReInitialize {
         welcomeAty.experienceClick ();
         welcomeAty.permissionsClick ();
         welcomeAty.allowClick ();
-        MainAty mainAty = (MainAty) ActivityFactory.atyFactory( MainAty.class , welcomeAty.getDriver() );
-        System.out.println(mainAty.driver.currentActivity());
+        MainAty mainAty = new MainAty ( AppTest.driver );
         mainAty.clickPackageClose();
-        System.out.println(mainAty.driver.currentActivity());
         mainAty.clickUserHome();
-        UserHomeAty userHomeAty = (UserHomeAty) ActivityFactory.atyFactory( UserHomeAty.class , mainAty.getDriver() );
-        System.out.println(userHomeAty.driver.currentActivity());
+        UserHomeAty userHomeAty = new UserHomeAty ( AppTest.driver );
+        userHomeAty.clickCenterLogin ();
+        LoginAty loginAty = new LoginAty ( AppTest.driver );
+        loginAty.clickPWLogin ();
+        loginAty.inputUserNmae ( "13508496358");
+        loginAty.inputPassWord ( "qwe123456" );
+        loginAty.back ();
+        loginAty.clickBPWLogin ();
         AppTest.end ();
     }
 }
