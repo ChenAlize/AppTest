@@ -23,12 +23,17 @@ public class ReadXml {
     Log log = new Log ( ReadXml.class );
 
     private Element elements;
+    List<Element> list = new ArrayList <Element> ( );
     private Document doc ;
 
     public  ReadXml(){
 
     }
 
+    /**
+     * 初始化，Document
+     * @param path
+     */
     public  ReadXml(String path){
         SAXReader reader = new SAXReader (  );
         try {
@@ -38,33 +43,42 @@ public class ReadXml {
         }
     }
 
+
     public void setElements( Element root ){
         elements = root;
     }
 
+    /**
+     * 获取根节点
+     * @return
+     */
     public Element getRootElement(){
         Element root = doc.getRootElement ();
         return root;
     }
 
-    public void next( Element root , String nodes ){
-        if ( !root.getName ().equals ( nodes )){
-            List<Element> node = root.elements ( );
-            for ( Element e : node ){
-                next ( e , nodes );
-            }
-        }else {
-            setElements ( root );
-        }
-    }
+//    public void next( Element root , String nodes ){
+//        List<Element> node = root.elements ( );
+//        for ( Element e : node ){
+//                if ( e.getName ().equals ( nodes ) ){
+//                    setElements ( root );
+//                }
+//            }
+//        for ( Element e : node ){
+//            next ( e , nodes );
+//        }
+//    }
 
-    static List<Element> list = new ArrayList <Element> (  );
-
+    /**
+     * 遍历节点下所以node子节点，list保存
+     * @param root
+     * @param node
+     * @return
+     */
     public List<Element> selectNode(Element root , String node ){
         List<Element> ele = root.elements ();
         for ( Element e : ele ) {
            String nodeName = e.getName ();
-           System.out.println ( nodeName );
            boolean ssk = nodeName.equals ( node );
            if ( ssk ) {
                list.add ( e );
@@ -75,6 +89,16 @@ public class ReadXml {
         }
         return list;
     }
+
+    public Element selectType( Element e ){
+
+        if (e.attributeValue ( "index" ).equals ( "0" )) {
+            return e;
+        }
+        return null;
+    }
+
+
 
     /**
      * xml 读取手机配置

@@ -20,12 +20,13 @@ public class Test extends ReInitialize{
 
     @org.testng.annotations.Test(enabled = true )
     public void  readerXml() throws DocumentException {
-        String  path = "D:\\IdeaProjects\\AppTest\\com\\android\\benlai\\activity\\main\\MainActivity\\Package.xml";
+        String  path = "D:\\IdeaProjects\\AppTest\\com\\android\\benlai\\activity\\main\\MainActivity\\MainAty.xml";
         ReadXml readXml = new ReadXml ( path );
         Element root = readXml.getRootElement ();
-        java.util.List <Element> element = readXml.selectNode ( root , "android.widget.Button" );
+        java.util.List <Element> element = readXml.selectNode ( root , "android.widget.ImageButton" );
         for ( Element e : element  ){
-            System.out.println ( e.attributeValue ( "text" ) );
+            Element eleme = readXml.selectType ( e );
+            System.out.println ( eleme.getName () + ": " + eleme.attributeValue ( "resource-id" ) );
         }
     }
 
