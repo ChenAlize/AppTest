@@ -64,12 +64,17 @@ public class XmlErgodicTool {
         Document document = null;
         try {
             // xmlString = new String(xmlString.getBytes(), encoding);
+            /* 读取字符串 */
             StringReader stringReader = new StringReader(xmlString);
+            /*把要解析的 XML 文档转化为输入流，以便 DOM 解析器解析它*/
             InputSource inputSource = new InputSource(stringReader);
-            DocumentBuilderFactory docBuilderFac = DocumentBuilderFactory
-                    .newInstance();
+            /*得到 DOM 解析器的工厂实例   */
+            DocumentBuilderFactory docBuilderFac = DocumentBuilderFactory.newInstance();
+            /*从 DOM 工厂获得 DOM 解析器*/
             DocumentBuilder docBuilder = docBuilderFac.newDocumentBuilder();
+            /*解析 XML 文档的输入流，得到一个 Document*/
             document = docBuilder.parse(inputSource);
+
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -77,7 +82,9 @@ public class XmlErgodicTool {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        /*得到 XML 文档的根节点*/
         Element node = document.getDocumentElement();
+
         this.getElementList( node , xmlLeafBeanList, "", attrFilter);
 
         return xmlLeafBeanList;
@@ -134,7 +141,9 @@ public class XmlErgodicTool {
      */
     private void getElementList(Node node, List<XmlLeafBean> xmlLeafBeanList,
                                 String currentNode, List<String> filter) {
+        /*当前节点是元素节点<?>*/
         if (node.getNodeType() == Node.ELEMENT_NODE) {
+            /* xpath = /节点名称 */
             currentNode = currentNode + "/" + node.getNodeName();
             NamedNodeMap namedNodeMap = node.getAttributes();
             String nodeAttr = "[ ";

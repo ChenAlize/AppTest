@@ -25,8 +25,6 @@ public class WelcomeAty extends AppElement {
             super.scrollLevel ( 1000, 100, 1000 );
             ReFile.writePage ( driver , "zhu_cheng" );
             super.scrollLevel ( 1000, 100, 1000 );
-
-
     }
     //       点击立即体验
     public void experienceClick(){
@@ -37,8 +35,6 @@ public class WelcomeAty extends AppElement {
     public void permissionsClick(){
         ReFile.writePage ( driver , "Permissions" );
         super.coordinateClick ( 527,1149 );
-
-
     }
     //       允许权限
     public void allowClick(){

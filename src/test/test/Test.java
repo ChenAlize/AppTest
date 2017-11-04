@@ -3,12 +3,20 @@ import Util.ReFile.ReFile;
 import Util.ReFile.ReString;
 import Util.Read.ReadXml;
 import Util.TestUtil.ReInitialize;
-import Util.Xpath.XmlErgodicTool;
-import Util.Xpath.XmlLeafBean;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -18,73 +26,113 @@ import java.util.*;
  */
 public class Test extends ReInitialize{
 
-    @org.testng.annotations.Test( enabled = true )
-    public void getXpath(){
+    @org.testng.annotations.Test( enabled = false )
+    public void getXpath() throws ParserConfigurationException, IOException, SAXException {
 
         List<String> attrFilter = new ArrayList<String>();
-        attrFilter.add("android.widget.RelativeLayout");
-        String element = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><hierarchy rotation=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"1\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"android:id/content\" instance=\"2\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1308]\" resource-id=\"com.android.benlailife.activity:id/iv_dialog_red_package_image\" instance=\"0\"/><android.widget.Button index=\"1\" text=\"立即领取\" class=\"android.widget.Button\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,1008][753,1116]\" resource-id=\"com.android.benlailife.activity:id/btn_dialog_red_package_go\" instance=\"0\"/><android.widget.ImageButton index=\"2\" text=\"\" class=\"android.widget.ImageButton\" package=\"com.android.benlailife.activity\" content-desc=\"关闭\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[496,1452][583,1539]\" resource-id=\"com.android.benlailife.activity:id/ib_dialog_red_package_close\" instance=\"0\"/></android.widget.RelativeLayout></android.widget.FrameLayout></android.widget.FrameLayout></android.widget.FrameLayout></hierarchy>";
-//        attrFilter.add("android.view.View");
-//        String xmlString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-//                + "<doc>\n" + "    <person>\n" + "        <name>某人</name>\n"
-//                + "        <adds>            \n"
-//                + "            <add ID=\"10002\">\n"
-//                + "                <BS>10002</BS>\n"
-//                + "                <note>西安市太白路</note>\n"
-//                + "            </add>\n" + "            <add ID=\"\">\n"
-//                + "                <BS>10002</BS>\n"
-//                + "                <note>空ID节点啊</note>\n"
-//                + "            </add>\n" + "            <add>\n"
-//                + "                <BS>10002</BS>\n"
-//                + "                <note>空ID节点啊</note>\n"
-//                + "            </add>\n" + "\t\t\t<add ID=\"10001\">\n"
-//                + "\t\t\t\t<BS xmlns=\"10001\"/>\n"
-//                + "                <note>西安市太白路2</note>\n"
-//                + "            </add>\n" + "\t\t</adds>\n" + "    </person>\n"
-//                + "    <other>\n" + "        <name ID=\"HEHE\">ASDF</name>\n"
-//                + "    </other>\n" + "</doc>";
+        String xpath = "";
+//        attrFilter.add("android.widget.RelativeLayout");
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><hierarchy  rotation=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"1\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"android:id/content\" instance=\"2\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1539]\" resource-id=\"\" instance=\"0\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[135,344][945,1308]\" resource-id=\"com.android.benlailife.activity:id/iv_dialog_red_package_image\" instance=\"0\"/><android.widget.Button index=\"1\" text=\"立即领取\" class=\"android.widget.Button\" package=\"com.android.benlailife.activity\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[327,1008][753,1116]\" resource-id=\"com.android.benlailife.activity:id/btn_dialog_red_package_go\" instance=\"0\"/><android.widget.ImageButton index=\"2\" text=\"\" class=\"android.widget.ImageButton\" package=\"com.android.benlailife.activity\" content-desc=\"关闭\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[496,1452][583,1539]\" resource-id=\"com.android.benlailife.activity:id/ib_dialog_red_package_close\" instance=\"0\"/></android.widget.RelativeLayout></android.widget.FrameLayout></android.widget.FrameLayout></android.widget.FrameLayout></hierarchy>";
+        StringReader reader = new StringReader ( xml );
+        InputSource input = new InputSource ( reader );
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance ();
+        DocumentBuilder builder = factory.newDocumentBuilder ();
+        Document doc = builder.parse ( input );
+        org.w3c.dom.Element root = doc.getDocumentElement ();
+        short type = root.getNodeType ();
 
-        XmlErgodicTool xmlErgodic = new XmlErgodicTool();
-
-        List<XmlLeafBean> xmlLeafBeanList = xmlErgodic.getXmlLeafBeanList(
-                element, attrFilter);
-
-        for (XmlLeafBean xmlLeafBean : xmlLeafBeanList) {
-            System.out.println(xmlLeafBean.getXpath() + " , "
-                    + xmlLeafBean.getValue());
+        if ( type == Node.COMMENT_NODE ){
+            xpath = xpath + "/" + root.getTagName ();
         }
+        NamedNodeMap namedNodeMap = root.getAttributes();
+        String nodeXpath = "[ ";
+        System.out.println ( namedNodeMap.getLength () );
 
-//        System.out.println("__________");
+        for ( int i = 0; i < namedNodeMap.getLength(); i++) {
+            Node attribute = namedNodeMap.item ( i );
+            System.out.println ( attribute );
+
+            if (attrFilter == null || attrFilter.size () == 0) {
+                String nameAttr = " and @" + attribute.getNodeName () + "='"
+                        + attribute.getNodeValue () + "'";
+                System.out.println ( nameAttr );
+                nodeXpath += nameAttr;
+
+            }
+            System.out.println ( nodeXpath );
+        }
+        ////        attrFilter.add("android.view.View");
+////        String xmlString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+////                + "<doc>\n" + "    <person>\n" + "        <name>某人</name>\n"
+////                + "        <adds>            \n"
+////                + "            <add ID=\"10002\">\n"
+////                + "                <BS>10002</BS>\n"
+////                + "                <note>西安市太白路</note>\n"
+////                + "            </add>\n" + "            <add ID=\"\">\n"
+////                + "                <BS>10002</BS>\n"
+////                + "                <note>空ID节点啊</note>\n"
+////                + "            </add>\n" + "            <add>\n"
+////                + "                <BS>10002</BS>\n"
+////                + "                <note>空ID节点啊</note>\n"
+////                + "            </add>\n" + "\t\t\t<add ID=\"10001\">\n"
+////                + "\t\t\t\t<BS xmlns=\"10001\"/>\n"
+////                + "                <note>西安市太白路2</note>\n"
+////                + "            </add>\n" + "\t\t</adds>\n" + "    </person>\n"
+////                + "    <other>\n" + "        <name ID=\"HEHE\">ASDF</name>\n"
+////                + "    </other>\n" + "</doc>";
 //
-//        XmlErgodicTool xmlErgodicTool = new XmlErgodicTool();
-//        List<XmlLeafBean> xmlLeafBeanList2 = xmlErgodicTool
-//                .getXmlLeafBeanList(
-//                        new File(
-//                                "F:\\IdeaProJect\\AppTest\\com\\android\\benlai\\activity\\main\\MainActivity.xml"),
-//                        attrFilter);
-//        for (XmlLeafBean xmlLeafBean : xmlLeafBeanList2) {
-//            System.out.println( xmlLeafBean.getXpath() + " , "
+//        XmlErgodicTool xmlErgodic = new XmlErgodicTool();
+//
+//        List<XmlLeafBean> xmlLeafBeanList = xmlErgodic.getXmlLeafBeanList(
+//                element, attrFilter);
+//
+//        for (XmlLeafBean xmlLeafBean : xmlLeafBeanList) {
+//            System.out.println(xmlLeafBean.getXpath() + " , "
 //                    + xmlLeafBean.getValue());
 //        }
-
+//
+////        System.out.println("__________");
+////
+////        XmlErgodicTool xmlErgodicTool = new XmlErgodicTool();
+////        List<XmlLeafBean> xmlLeafBeanList2 = xmlErgodicTool
+////                .getXmlLeafBeanList(
+////                        new File(
+////                                "F:\\IdeaProJect\\AppTest\\com\\android\\benlai\\activity\\main\\MainActivity.xml"),
+////                        attrFilter);
+////        for (XmlLeafBean xmlLeafBean : xmlLeafBeanList2) {
+////            System.out.println( xmlLeafBean.getXpath() + " , "
+////                    + xmlLeafBean.getValue());
+////        }
+//
 
 }
 
-
-    @org.testng.annotations.Test(enabled = false )
+    /**
+     * 读取XML
+     * @throws DocumentException
+     */
+    @org.testng.annotations.Test(enabled = true )
     public void  readerXml() throws DocumentException {
-        String  path = "F:\\IdeaProJect\\AppTest\\com\\android\\benlai\\activity\\main\\MainActivity.xml";
-        ReadXml readXml = new ReadXml ( path );
+        String  path = "com/android/benlai/activity/main/MainActivity/UserHomeAty.xml";
+        ReadXml readXml = new ReadXml ();
+        readXml.Xml ( path );
         Element root = readXml.getRootElement ();
-        java.util.List <Element> element = readXml.selectNode ( root , "android.widget.ImageView" );
-        for ( Element e : element  ){
-            System.out.println ( e.getName () + ": " + e.attributeValue("text")  + e.attributeValue ( "resource-id" ) );
-        }
+        String xpath = "/";
+        /*获取根节点下，所以节点名称为 "" 的节点 */
+        java.util.List <Element> element = readXml.getNodes ( "TextView" );
+        Element te = readXml.getElement ( element , "[375,307][704,412]" );
+
+            xpath = xpath + te.getPath ();
+            System.out.println ( "节点名称 ：" + te.getName ());
+            System.out.println ( "节点的绝对路径：" + te.getPath ());
+            System.out.println ( "当前节点の父节点："+te.getParent ());
+
+        System.out.println ( "退换货节点ID："+ te.attributeValue ( "text" ));
+        System.out.println ( xpath );
+        org.dom4j.Node e = root.selectSingleNode ( xpath );
+        System.out.println ( "节点名称 ：" + e.getName ());
+
     }
-
-
-
-
 
     /**
      * 写入文件
@@ -102,7 +150,6 @@ public class Test extends ReInitialize{
         System.out.println ( pathFile );
 
     }
-
 
     /**
      * 数据库链接操作

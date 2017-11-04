@@ -111,8 +111,6 @@ public class ReFile {
             pathFile = ReString.pathFile ( path , "xml" );
             createDir ( pathDir );
             write ( element , pathFile  );
-            System.out.println ( pathFile );
-            System.out.println ( element );
         }
         return pathFile;
     }

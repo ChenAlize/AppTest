@@ -1,6 +1,7 @@
 package Util.Read;
 
 
+import AppData.Elelocator;
 import Util.Logger.Log;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -24,12 +25,13 @@ public class ReadXml {
 
     private Element elements;
     private Document doc ;
+    static List<Element> list = new ArrayList <Element> ( );
 
-    public  ReadXml(){
-
-    }
-
-    public  ReadXml(String path){
+    public  ReadXml(){}
+    /*
+    读取xml文件，创建 Document 对象
+     */
+    public void Xml(String path){
         SAXReader reader = new SAXReader (  );
         try {
             doc = reader.read ( new File ( path )  );
@@ -38,29 +40,18 @@ public class ReadXml {
         }
     }
 
-    public void setElements( Element root ){
-        elements = root;
-    }
-
+    public void setElements( Element root ){ elements = root;}
+    /*
+    获取跟节点
+     */
     public Element getRootElement(){
         Element root = doc.getRootElement ();
         return root;
     }
-
-    public void next( Element root , String nodes ){
-        if ( !root.getName ().equals ( nodes )){
-            List<Element> node = root.elements ( );
-            for ( Element e : node ){
-                next ( e , nodes );
-            }
-        }else {
-            setElements ( root );
-        }
-    }
-
-    static List<Element> list = new ArrayList <Element> (  );
-
-    public List<Element> selectNode(Element root , String node ){
+    /*
+    获取所以Element 节点
+     */
+    private List<Element> selectNode(Element root , String node ){
         List<Element> ele = root.elements ();
         for ( Element e : ele ) {
            String nodeName = e.getName ();
@@ -74,6 +65,62 @@ public class ReadXml {
         }
         return list;
     }
+    /*
+    获取当前节点的path路径
+     */
+    public String getpath( Element root ){
+        return root.getPath ();
+    }
+
+    /**
+     * 通过属性，在相同的节点中定位到元素节点
+     * @param element
+     * @param attribute
+     * @return
+     */
+    public Element getElement(List<Element> element , String attribute){
+        for ( Element e : element  ) {
+            if (e.attributeValue ( "text" ).equals ( attribute )) {
+                setElements ( e );
+            }
+            if (e.attributeValue ( "index" ).equals ( attribute )) {
+                setElements ( e );
+            }
+            if (e.attributeValue ( "content-desc" ).equals ( attribute )) {
+                setElements ( e );
+            }
+            if (e.attributeValue ( "bounds" ).equals ( attribute )) {
+                setElements ( e );
+            }
+        }
+        return elements;
+    }
+
+    /**
+     * 查询控件
+     */
+    public List<Element> getNodes( String node ){
+        Element root = getRootElement ();
+        List<Element> list = new ArrayList <Element> ();
+        if ( node.equalsIgnoreCase ( "TextView" )){
+            list = selectNode ( root , "android.widget.TextView" );
+        }
+        if ( node.equalsIgnoreCase ( "ImageView" )){
+            list = selectNode ( root , "android.widget.ImageView" );
+        }
+        if ( node.equalsIgnoreCase ( "View" )){
+            list = selectNode ( root , "android.widget.View" );
+        }
+        if ( node.equalsIgnoreCase ( "Button" )){
+            list = selectNode ( root , "android.widget.Button" );
+        }
+        if ( node.equalsIgnoreCase ( "ImageButton" )){
+            list = selectNode ( root , "android.widget.ImageButton" );
+        }
+        return list;
+    }
+
+
 
     /**
      * xml 读取手机配置
