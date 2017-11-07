@@ -3,6 +3,7 @@ package Util.Read;
 
 import AppData.Elelocator;
 import Util.Logger.Log;
+import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -25,11 +26,15 @@ public class ReadXml {
 
     private Element elements;
     private Document doc ;
-    static List<Element> list = new ArrayList <Element> ( );
+
+    static List<Element> selectlist = new ArrayList <Element> ( );
+    static List<Element> tlist = new ArrayList <Element> ( );
 
     public  ReadXml(){}
-    /*
-    读取xml文件，创建 Document 对象
+
+    /**
+     * 读取xml文件，创建 Document 对象
+     * @param path  xml文件路径
      */
     public void Xml(String path){
         SAXReader reader = new SAXReader (  );
@@ -41,15 +46,19 @@ public class ReadXml {
     }
 
     public void setElements( Element root ){ elements = root;}
-    /*
-    获取跟节点
+    /**
+     * 获取跟节点
      */
     public Element getRootElement(){
         Element root = doc.getRootElement ();
         return root;
     }
-    /*
-    获取所以Element 节点
+
+    /**
+     * 获取指定节点 List<Element>
+     * @param root 父节点
+     * @param node 筛选的节点名称
+     * @return
      */
     private List<Element> selectNode(Element root , String node ){
         List<Element> ele = root.elements ();
@@ -57,21 +66,39 @@ public class ReadXml {
            String nodeName = e.getName ();
            boolean ssk = nodeName.equals ( node );
            if ( ssk ) {
-               list.add ( e );
+               selectlist.add ( e );
            }
         }
         for ( Element e : ele ){
             selectNode(e , node);
         }
-        return list;
-    }
-    /*
-    获取当前节点的path路径
-     */
-    public String getpath( Element root ){
-        return root.getPath ();
+        return selectlist;
     }
 
+    /**
+     * 获取所以节点 List<Element>
+     * @param root 父节点
+     * @return
+     */
+    public List<Element> allNode(Element root ){
+        List<Element> ele = root.elements ();
+        for ( Element e : ele ) {
+            tlist.add ( e );
+        }
+        for ( Element e : ele ){
+            allNode( e );
+        }
+        return tlist;
+    }
+
+    /**
+     * 获取当前节点的path路径
+     * @param element
+     * @return
+     */
+    public String getpath( Element element ){
+        return element.getPath ();
+    }
     /**
      * 通过属性，在相同的节点中定位到元素节点
      * @param element
@@ -120,7 +147,37 @@ public class ReadXml {
         return list;
     }
 
+    /**
+     * 获取当前节点的所以attribute 保存到map中
+     * @param node
+     * @return
+     */
+    public Map<String, String> getAttribute(Element node){
+        Map<String, String> map = new HashMap <String, String> (  );
+        List<Attribute> listAttr=node.attributes();//当前节点的所有属性的list
+        for(Attribute attr:listAttr){       //遍历当前节点的所有属性
+            String name=attr.getName();     //属性名称
+            String value=attr.getValue();   //属性的值
+            map.put ( name , value );
+        }
+        return map;
+    }
 
+    public List<String> selectAttribute( String select){
+        Element root = getRootElement ();
+        List<Element> list = allNode ( root );
+        Map<String, String> map ;
+        List<String > text = new ArrayList <String> (  );
+        for (int i = 0; i < list.size () ; i++ ){
+            Element e = list.get ( i );
+            map = getAttribute ( e );
+            String value = map.get ( select );
+            if ( value!= null && !value.equals ( "" )){
+                text.add ( value );
+            }
+        }
+        return text;
+    }
 
     /**
      * xml 读取手机配置

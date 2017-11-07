@@ -3,6 +3,7 @@ package TestCase.com.Benlai;
 import Act.com.Benlai.MainAct;
 import Act.com.Benlai.UserHomeAct;
 import Act.com.Benlai.WelcomeAct;
+import Activity.GetPermissionsAty;
 import Activity.LoginAty;
 import Activity.MainAty;
 import Activity.UserHomeAty;
@@ -18,7 +19,18 @@ import org.testng.annotations.Test;
  */
 public class Start_App extends ReInitialize {
 
-    @Test ( enabled = true , priority = 0 )
+    @Test ( enabled = true )
+    public void GetPermissions(){
+        AppTest.init ( "HAWEI Mate 9" );
+        WelcomeAty welcomeAty = new WelcomeAty ( AppTest.driver );
+        welcomeAty.liftRow();
+        welcomeAty.experienceClick ();
+        GetPermissionsAty aty = new GetPermissionsAty ( AppTest.driver );
+        aty.permissionsClick ();
+        AppTest.end ();
+    }
+
+    @Test ( enabled = false , priority = 0 )
     public void mate_9 (){
         AppTest.init ( "HAWEI Mate 9" );
         WelcomeAty welcomeAty = new WelcomeAty ( AppTest.driver );

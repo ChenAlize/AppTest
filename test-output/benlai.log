@@ -1,29 +1,30 @@
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
-[2017-10-31 11:15:01 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
-[2017-10-31 11:15:29 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-31 11:15:36 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
-[2017-10-31 11:15:42 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
-[2017-10-31 11:15:50 CST] [main] [] -[信息] 【点击坐标】 ： ( 527 , 1149 )
-[2017-10-31 11:15:57 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-31 11:16:04 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-31 11:16:11 CST] [main] [] -[信息] 【点击坐标】 ： ( 783 , 1686 )
-[2017-10-31 11:16:14 CST] [main] [] -[信息] 【读取】 ：MainAty
-[2017-10-31 11:16:22 CST] [main] [] -[信息] 【点击】 ： 关闭红包
-[2017-10-31 11:16:23 CST] [main] [] -[信息] 【读取】 ：MainAty
-[2017-10-31 11:16:30 CST] [main] [] -[信息] 【点击】 ： 我的本来
-[2017-10-31 11:16:30 CST] [main] [] -[信息] 【读取】 ：UserHomeAty
-[2017-10-31 11:16:35 CST] [main] [] -[信息] 【点击】 ： 登录注册
-[2017-10-31 11:16:35 CST] [main] [] -[信息] 【读取】 ：LoginAty
-[2017-10-31 11:16:40 CST] [main] [] -[信息] 【点击】 ： 密码登录
-[2017-10-31 11:16:40 CST] [main] [] -[信息] 【读取】 ：LoginAty
-[2017-10-31 11:16:50 CST] [main] [] -[信息] 【输入】  用户名 : 13508496358
-[2017-10-31 11:16:50 CST] [main] [] -[信息] 【读取】 ：LoginAty
-[2017-10-31 11:17:01 CST] [main] [] -[信息] 【输入】  密码 : qwe123456
-[2017-10-31 11:17:05 CST] [main] [] -[信息] 【返回】
-[2017-10-31 11:17:05 CST] [main] [] -[信息] 【读取】 ：LoginAty
-[2017-10-31 11:17:11 CST] [main] [] -[信息] 【点击】 ： 密码登录btn
+[2017-11-07 19:20:01 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
+[2017-11-07 19:20:02 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
+[2017-11-07 19:20:02 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
+[2017-11-07 19:20:02 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
+[2017-11-07 19:20:02 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
+[2017-11-07 19:20:02 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
+[2017-11-07 19:20:02 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
+[2017-11-07 19:20:28 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-11-07 19:20:37 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-11-07 19:20:43 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
+[2017-11-07 19:28:46 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
+[2017-11-07 19:29:10 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-11-07 19:29:18 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-11-07 19:29:25 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【配置路径】：/D:/IdeaProjects/AppTest/target/test-classes/AppConfig.xml
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【节点】：appValue <-> 【值】：3.3.0
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【节点】：appPackage <-> 【值】：com.android.benlailife.activity
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【节点】：appActivity <-> 【值】：com.android.benlai.activity.WelcomeActivity
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【节点】：platformVersion <-> 【值】：7.0
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【节点】：udid <-> 【值】：GWY0216B26003168
+[2017-11-07 19:33:37 CST] [main] [] -[信息] 【节点】：logPath <-> 【值】：/test-output
+[2017-11-07 19:34:00 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-11-07 19:34:07 CST] [main] [] -[信息] 【水平划动】 ： ( 1000 , 1000 : 100 , 1000 ) 
+[2017-11-07 19:34:14 CST] [main] [] -[信息] 【点击坐标】 ： ( 314 , 1671 )

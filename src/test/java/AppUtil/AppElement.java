@@ -1,5 +1,6 @@
 package AppUtil;
 
+import AppData.Elelocator;
 import AppData.Locator;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -17,6 +18,8 @@ import java.util.List;
  * Created by chenbo on 2017/10/19.
  */
 public class AppElement extends AppKey {
+
+
 
     public AppElement(AndroidDriver driver) {
         super ( driver );

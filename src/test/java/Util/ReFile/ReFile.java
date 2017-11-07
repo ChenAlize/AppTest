@@ -33,7 +33,7 @@ public class ReFile {
     public static boolean createDir(String destDirName) {
         File dir = new File(destDirName);
         if (dir.exists()) {// 判断目录是否存在
-            System.out.println("创建目录失败，目标目录已存在！");
+            System.out.println( "【目录】：" + dir);
             return false;
         }
         if (!destDirName.endsWith(File.separator)) {// 结尾是否以"/"结束
