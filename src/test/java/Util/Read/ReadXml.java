@@ -1,7 +1,6 @@
 package Util.Read;
 
 
-import AppData.Elelocator;
 import Util.Logger.Log;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
@@ -28,7 +27,7 @@ public class ReadXml {
     private Document doc ;
 
     static List<Element> selectlist = new ArrayList <Element> ( );
-    static List<Element> tlist = new ArrayList <Element> ( );
+    static List<Element> list = new ArrayList <Element> ( );
 
     public  ReadXml(){}
 
@@ -60,7 +59,7 @@ public class ReadXml {
      * @param node 筛选的节点名称
      * @return
      */
-    private List<Element> selectNode(Element root , String node ){
+    private List<Element> selectNode( Element root , String node ){
         List<Element> ele = root.elements ();
         for ( Element e : ele ) {
            String nodeName = e.getName ();
@@ -83,12 +82,12 @@ public class ReadXml {
     public List<Element> allNode(Element root ){
         List<Element> ele = root.elements ();
         for ( Element e : ele ) {
-            tlist.add ( e );
+            list.add ( e );
         }
         for ( Element e : ele ){
             allNode( e );
         }
-        return tlist;
+        return list;
     }
 
     /**
@@ -163,6 +162,11 @@ public class ReadXml {
         return map;
     }
 
+    /**
+     * 获取自定的 attribute 如，text ，id
+     * @param select
+     * @return
+     */
     public List<String> selectAttribute( String select){
         Element root = getRootElement ();
         List<Element> list = allNode ( root );
@@ -177,6 +181,41 @@ public class ReadXml {
             }
         }
         return text;
+    }
+
+    /**
+     * 查询文件中属性的相同个数
+     * @param attribute
+     * @param value
+     * @return
+     */
+    public int attributeNumber( String attribute , String value ){
+        List<String> text = selectAttribute ( attribute );
+        int index = 0 ;
+        for ( int i = 0 ; i < text.size () ; i ++ ){
+            if ( text.get ( i ).equals ( value )){
+                index = index+1;
+            }
+        }
+        return index;
+    }
+
+    /**
+     * 查询相同classname中attribute的出现次数
+     * @param node
+     * @param attribute
+     * @param value
+     * @return
+     */
+    public int elementNumber( String node , String attribute , String value ){
+        List<Element> list = selectNode ( getRootElement () , node );
+        int index = 0 ;
+        for ( int i = 0 ; i < list.size () ; i++ ){
+            if ( list.get ( i ).attributeValue ( attribute ).equals ( value ) ){
+                index ++;
+            }
+        }
+        return index;
     }
 
     /**

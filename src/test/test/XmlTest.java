@@ -20,19 +20,9 @@ public class XmlTest {
         String  path = "com/android/benlai/activity/main/MainActivity/UserHomeAty.xml";
         ReadXml readXml = new ReadXml ();
         readXml.Xml ( path );
-        List<String> text = readXml.selectAttribute ( "text" );
-        int index = 0 ;
-        for ( int i = 0 ; i < text.size () ; i ++ ){
-            if ( text.get ( i ).equals ( "元" )){
-                index = index+1;
-            }
-        }
+        int index = readXml.attributeNumber ( "text" , "上海" ) ;
         System.out.println ( index );
-
-
     }
-
-
 
 
 }
