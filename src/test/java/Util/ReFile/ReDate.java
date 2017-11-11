@@ -16,5 +16,10 @@ public class ReDate {
         return new SimpleDateFormat ("yyyy-MM-dd-HH-mm-ss").format(date);
     }
 
+    public static java.lang.String Data ( ) {
+        Date date = new Date();
+        return new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss").format(date);
+    }
+
 
 }

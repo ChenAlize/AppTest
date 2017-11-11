@@ -12,12 +12,10 @@ public class GetPermissionsAty extends MobileElement {
     public GetPermissionsAty(AndroidDriver driver) {
         super ( driver );
         String path = ReFile.writePage ( driver , this.getClass ().getSimpleName ());
-        System.out.println ( "读取元素" );
         super.setPath ( path );
     }
 
     public void permissionsClick(){
-        System.out.println ( "点击确定" );
         clickButton ( "确定" );
     }
 }

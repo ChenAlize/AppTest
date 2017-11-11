@@ -29,7 +29,6 @@ public class WelcomeAct  {
         WelcomeAty welcomeAty = new WelcomeAty ( getDriver() );
         welcomeAty.liftRow();
         welcomeAty.experienceClick ();
-        welcomeAty.permissionsClick ();
         welcomeAty.allowClick ();
         return (MainAty) ActivityFactory.atyFactory( MainAty.class , getDriver()  );
     }

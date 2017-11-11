@@ -2,6 +2,7 @@ package Act;
 
 import AppData.AppConfig;
 import Util.Logger.Log;
+import Util.Logger.ReportLog;
 import Util.ReFile.ReFile;
 import Util.ReFile.ReString;
 import io.appium.java_client.android.AndroidDriver;
@@ -13,11 +14,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class ActBase {
 
-    public Log log;
+    public ReportLog log;
     public AndroidDriver driver;
     public AppConfig Config;
 
-    public ActBase(AndroidDriver driver){this.driver = driver;log = new Log ( this.getClass () );Config = new AppConfig ( );}
+    public ActBase(AndroidDriver driver){this.driver = driver;log = new ReportLog ();Config = new AppConfig ( );}
 
     public AndroidDriver getDriver(){return this.driver;}
 

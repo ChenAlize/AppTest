@@ -1,9 +1,9 @@
 package AppData;
 
 import Util.Read.ReadXml;
-import com.android.uiautomator.core.UiSelector;
+import io.appium.java_client.MobileBy;
 import org.dom4j.Element;
-import org.jsoup.nodes.Entities;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
@@ -23,18 +23,18 @@ public class MobileLocator {
     private String id ;
     private String instance;
 
-    public String mobileText(){
-        String ss = null;
+    public By mobileText(){
+        By ss = null;
         if ( attributeOnly ( id )){
-            ss = String.valueOf ( new UiSelector ().resourceId ( id ) );
-        } else if ( attributeOnly ( text )){
-            ss = String.valueOf ( new UiSelector ().text ( text ) );
+            ss = MobileBy.id ( id );
+        } else if ( attributeOnly ( name )){
+            ss = MobileBy.AccessibilityId ( name );
         } else if ( elementOnly ( id ) ){
-            ss = String.valueOf ( new UiSelector ().className ( className ).resourceId ( id ) );
+            ss = MobileBy.xpath ( "//"+className+"[@resource-id='" +id + "']" );
         } else if ( elementOnly ( text ) ) {
-            ss = String.valueOf ( new UiSelector ().className ( className ).text ( text ) );
+            ss = MobileBy.xpath ( "//"+className+"[@text='" +text + "']" );
         } else if ( elementOnly ( index ) ) {
-            ss = String.valueOf ( new UiSelector ().className ( className ).index ( Integer.getInteger ( index )) );
+            ss = MobileBy.xpath ( "//"+className+"[@index='" +index + "']" );
         }
         return ss;
     }
@@ -118,8 +118,8 @@ public class MobileLocator {
         if ( attribut == id ){
             number =  xml.attributeNumber ( "resource-id" , attribut );
         }
-        if ( attribut == text ){
-            number =  xml.attributeNumber ( "text" , attribut );
+        if ( attribut == name ){
+            number =  xml.attributeNumber ( "content-desc" , attribut );
         }
        if ( number == 1 ){
            only = true;

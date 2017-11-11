@@ -26,7 +26,7 @@ public class ExtentManager {
     }
 
     public static ExtentReports getExtentReport (){
-        extent = new ExtentReports(  filePath , true , OFFLINE );
+        extent = new ExtentReports(  filePath , false ,NEWEST_FIRST , OFFLINE );
         extent.config ().documentTitle("测试报表-1.0")
                         .reportName("Android Test")
                         .reportHeadline("Com.BenLai");

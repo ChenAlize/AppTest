@@ -1,8 +1,6 @@
 package AppUtil;
 
 import AppData.MobileLocator;
-import com.android.uiautomator.core.UiSelector;
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
 import org.openqa.selenium.WebDriver;
@@ -26,8 +24,7 @@ public class MobileElement extends AppKey {
 
     public void clickButton( String select){
         elelocator.Button ( select );
-        System.out.println ( "查找元素：" + select );
-        findElement ( ).click ();
+        findElement ().click ();
     }
 
     /**
@@ -37,9 +34,8 @@ public class MobileElement extends AppKey {
      */
     public WebElement getFindElement( ){
         WebElement element = null ;
-        String ss = String.valueOf ( new UiSelector ().resourceId ( elelocator.getId () ) );
 
-        element = driver.findElement ( MobileBy.AndroidUIAutomator( ss) );
+        element = driver.findElement ( elelocator.mobileText () );
 
         return element;
     }
@@ -61,6 +57,7 @@ public class MobileElement extends AppKey {
                 }
             } );
         }catch ( Exception e ){
+            log.error ( "定位失败" );
         }
         return Androidelement;
     }

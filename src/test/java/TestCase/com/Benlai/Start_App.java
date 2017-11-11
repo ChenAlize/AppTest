@@ -36,7 +36,6 @@ public class Start_App extends ReInitialize {
         WelcomeAty welcomeAty = new WelcomeAty ( AppTest.driver );
         welcomeAty.liftRow();
         welcomeAty.experienceClick ();
-        welcomeAty.permissionsClick ();
         welcomeAty.allowClick ();
         MainAty mainAty = new MainAty ( AppTest.driver );
         mainAty.clickPackageClose();

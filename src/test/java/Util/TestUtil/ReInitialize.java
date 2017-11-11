@@ -1,6 +1,7 @@
 package Util.TestUtil;
 
 import Util.Logger.Log;
+import Util.Logger.ReportLog;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -8,12 +9,12 @@ import java.lang.reflect.Method;
 
 public class ReInitialize {
 
-    public Log log;
+    public ReportLog log;
 
     @BeforeClass
     public void beforeClass() {
 
-        log = new Log();
+        log = new ReportLog();
         log.createTest( this.getClass() );
         System.out.println( " ===== 测试开始：  " + this.getClass().getSimpleName() + "初始化报表！");
     }

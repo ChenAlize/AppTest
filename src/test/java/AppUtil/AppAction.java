@@ -2,6 +2,7 @@ package AppUtil;
 
 import AppData.AppConfig;
 import Util.Logger.Log;
+import Util.Logger.ReportLog;
 import Util.ReFile.ReDate;
 import io.appium.java_client.android.AndroidDriver;
 import org.aspectj.util.FileUtil;
@@ -15,7 +16,7 @@ import java.io.IOException;
  */
 public class AppAction {
 
-    public Log log = new Log ( this.getClass () );
+    public ReportLog log = new ReportLog ();
 
     public AndroidDriver driver;
 
