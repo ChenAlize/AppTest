@@ -1,13 +1,7 @@
 package Util.Logger;
 
-import Util.Report.ExtentManager;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.ITestResult;
-
-import java.lang.reflect.Method;
 
 
 /**
@@ -31,7 +25,7 @@ public class Log {
      * @param message
      */
     public void pass( String message ) {
-        logger.info ( " [成功] " + message );
+        logger.info ( " 【成功】 " + message );
         }
 
     /**
@@ -39,7 +33,7 @@ public class Log {
      * @param message
      */
     public void error( String message ) {
-        logger.error (  "[错误] " + message );
+        logger.error (  "【错误】 " + message );
         }
 
     /**
@@ -47,7 +41,7 @@ public class Log {
      * @param message
      */
     public void fatal( String message ) {
-        logger.fatal( "[错误] " + message );
+        logger.fatal( "【错误】 " + message );
         }
 
     /**
@@ -55,7 +49,7 @@ public class Log {
      * @param message
      */
     public void info( String message  ) {
-        logger.info (  "[信息] " + message );
+        logger.info (  "【信息】 " + message );
     }
 
     /**
@@ -63,7 +57,7 @@ public class Log {
      * @param message
      */
     public void unknown( String message ) {
-        logger.error ("[未知] " + message );
+        logger.error ("【未知】 " + message );
         }
 
     /**
@@ -71,7 +65,7 @@ public class Log {
      * @param message
      */
     public void warning( String message ) {
-        logger.warn ( "[警告] " + message );
+        logger.warn ( "【警告】 " + message );
         }
 
 }

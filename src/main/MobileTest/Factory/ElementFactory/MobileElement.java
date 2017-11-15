@@ -1,29 +1,30 @@
-package AppUtil;
+package Factory.ElementFactory;
 
-import AppData.MobileLocator;
+import Locator.MobileLocator;
+import Util.Logger.Log;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+
 /**
  * Created by chenbo on 2017/11/7.
  */
-public class MobileElement extends AppKey {
+public class MobileElement extends Intersection {
 
-    public MobileElement(AndroidDriver driver) {
-        super ( driver );
-    }
+    MobileLocator locator;
 
-    MobileLocator elelocator;
+    Log logger = new Log ( MobileElement.class );
 
-    public void setPath( String path ){
-        elelocator = new MobileLocator ( path );
+    public void setPath( String path ){ locator = new MobileLocator ( path );
     }
 
     public void clickButton( String select){
-        elelocator.Button ( select );
+        logger.info ( " 开始查找元素：" + select );
+        locator.Button ( select );
         findElement ().click ();
     }
 
@@ -33,10 +34,7 @@ public class MobileElement extends AppKey {
      * @return
      */
     public WebElement getFindElement( ){
-        WebElement element = null ;
-
-        element = driver.findElement ( elelocator.mobileText () );
-
+        WebElement element = driver.findElement ( locator.mobileBy () );
         return element;
     }
 
@@ -57,7 +55,7 @@ public class MobileElement extends AppKey {
                 }
             } );
         }catch ( Exception e ){
-            log.error ( "定位失败" );
+            log.error ( "定位超时！" );
         }
         return Androidelement;
     }

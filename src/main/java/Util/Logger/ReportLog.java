@@ -1,6 +1,5 @@
 package Util.Logger;
 
-import Util.ReFile.ReDate;
 import Util.Report.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
@@ -65,7 +64,16 @@ public class ReportLog {
      */
     public void pass( String message ) {
 
-        node.log( LogStatus.PASS , message );
+        node.log( LogStatus.PASS , message  );
+    }
+
+    /**
+     * 成功
+     * @param message
+     */
+    public void pass( String message  , String path ) {
+
+        node.log( LogStatus.PASS , message + node.addBase64ScreenShot( path ) );
     }
 
     /**

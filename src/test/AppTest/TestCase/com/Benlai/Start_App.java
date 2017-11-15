@@ -25,7 +25,7 @@ public class Start_App extends ReInitialize {
         WelcomeAty welcomeAty = new WelcomeAty ( AppTest.driver );
         welcomeAty.liftRow();
         welcomeAty.experienceClick ();
-        GetPermissionsAty aty = new GetPermissionsAty ( AppTest.driver );
+        GetPermissionsAty aty = new GetPermissionsAty (  );
         aty.permissionsClick ();
         AppTest.end ();
     }

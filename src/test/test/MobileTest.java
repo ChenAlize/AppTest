@@ -1,9 +1,9 @@
 import Activity.GetPermissionsAty;
-import Activity.WelcomeAty;
-import TestCase.AppTest;
+import Factory.ElementFactory.MobileElement;
 import Util.TestUtil.ReInitialize;
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.android.AndroidDriver;
+
+import java.net.MalformedURLException;
 
 
 /**
@@ -12,19 +12,23 @@ import io.appium.java_client.android.AndroidDriver;
 public class MobileTest extends ReInitialize{
 
     @org.testng.annotations.Test
-    public void mobileTest() throws InterruptedException {
-        AppTest.init ( "HAWEI Mate 9" );
-        AndroidDriver driver = AppTest.driver;
-        WelcomeAty welcomeAty = new WelcomeAty ( AppTest.driver );
-        welcomeAty.liftRow();
-        welcomeAty.experienceClick ();
-        GetPermissionsAty aty = new GetPermissionsAty ( AppTest.driver );
-        aty.permissionsClick ();
-        welcomeAty.allowClick ();
-        driver.findElement ( MobileBy.AccessibilityId ( "关闭" ) ).click ();
-//        driver.findElement ( By.xpath ( "//android.widget.Button[@text='立即领取']" ) ).click ();
-        AppTest.end ();
+    public void mobileTest() throws InterruptedException, MalformedURLException {
 
+        MobileElement element = new MobileElement ();
+        element.scrollLevel ( 1000, 100, 1000 );
+        element.scrollLevel ( 1000, 100, 1000 );
+        element.coordinateClick ( 314,1671 );
+        GetPermissionsAty permissionsAty = new GetPermissionsAty ();
+        permissionsAty.permissionsClick ();
+//        element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='确定']" ) ).click ();
+        element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='始终允许']" ) ).click ();
+        element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='始终允许']" ) ).click ();
+        element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='始终允许']" ) ).click ();
+        java.lang.Thread.sleep ( 5000 );
+
+        element.driver.findElement ( MobileBy.AccessibilityId ( "关闭" ) ).click ();
+//      driver.findElement ( By.xpath ( "//android.widget.Button[@text='立即领取']" ) ).click ();
+        element.driver.quit ();
 
     }
 }

@@ -1,4 +1,4 @@
-package AppData;
+package Locator;
 
 import Util.Read.ReadXml;
 import io.appium.java_client.MobileBy;
@@ -11,35 +11,48 @@ import java.util.List;
  * Created by chenbo on 2017/10/31.
  */
 public class MobileLocator {
+    static Util.Logger.Log log = new Util.Logger.Log ( MobileLocator.class );
+    private static ReadXml xml = new ReadXml ();
+    private static Element element ;
+    private static String index ;
+    private static String text;
+    private static String className;
+    private static String packageName;
+    private static String name ;
+    private static String bounds;
+    private static String id ;
+    private static String instance;
 
-    private ReadXml xml = new ReadXml ();
-    private Element element ;
-    private String index ;
-    private String text;
-    private String className;
-    private String packageName;
-    private String name ;
-    private String bounds;
-    private String id ;
-    private String instance;
-
-    public By mobileText(){
+    public static By mobileBy(){
         By ss = null;
+        java.lang.String xpath ;
         if ( attributeOnly ( id )){
             ss = MobileBy.id ( id );
-        } else if ( attributeOnly ( name )){
-            ss = MobileBy.AccessibilityId ( name );
-        } else if ( elementOnly ( id ) ){
-            ss = MobileBy.xpath ( "//"+className+"[@resource-id='" +id + "']" );
-        } else if ( elementOnly ( text ) ) {
-            ss = MobileBy.xpath ( "//"+className+"[@text='" +text + "']" );
-        } else if ( elementOnly ( index ) ) {
-            ss = MobileBy.xpath ( "//"+className+"[@index='" +index + "']" );
-        }
+            log.info ( "id定位：" + id );
+
+            } else if ( attributeOnly ( name )){
+                ss = MobileBy.AccessibilityId ( name );
+                log.info ( "AccessibilityId定位：" + name );
+
+                } else if ( elementOnly ( id ) ){
+                    xpath = "//"+className+"[@resource-id='" +id + "']" ;
+                    ss = MobileBy.xpath ( xpath );
+                    log.info ( "xpath定位：" + xpath );
+
+                    } else if ( elementOnly ( text ) ) {
+                        xpath = "//"+className+"[@text='" +text + "']" ;
+                        ss = MobileBy.xpath ( xpath );
+                        log.info ( "xpath定位：" + xpath );
+
+                        } else if ( elementOnly ( index ) ) {
+                            xpath = "//"+className+"[@index='" +index + "']" ;
+                            ss = MobileBy.xpath ( xpath );
+                            log.info ( "xpath定位：" + xpath );
+                        }
         return ss;
     }
 
-    public MobileLocator(String path){ xml.Xml ( path ); }
+    public MobileLocator( String path ){ xml.Xml ( path ); }
 
     public void Button( String select ){
         List<Element> list = xml.getNodes ( "Button" );
@@ -112,7 +125,7 @@ public class MobileLocator {
      * @param attribut
      * @return
      */
-    public boolean attributeOnly( String attribut ){
+    public static boolean attributeOnly( String attribut ){
         boolean only = false ;
         int number = 0 ;
         if ( attribut == id ){
@@ -132,7 +145,7 @@ public class MobileLocator {
      * @param attribut
      * @return
      */
-    public boolean elementOnly( String attribut ){
+    public static boolean elementOnly( String attribut ){
         boolean only = false ;
         int number = 0 ;
         if ( attribut == id ){
