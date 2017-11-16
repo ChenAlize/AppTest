@@ -18,8 +18,7 @@ public class MobileTest extends ReInitialize{
         element.scrollLevel ( 1000, 100, 1000 );
         element.scrollLevel ( 1000, 100, 1000 );
         element.coordinateClick ( 314,1671 );
-        GetPermissionsAty permissionsAty = new GetPermissionsAty ();
-        permissionsAty.permissionsClick ();
+
 //        element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='确定']" ) ).click ();
         element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='始终允许']" ) ).click ();
         element.driver.findElement ( MobileBy.xpath ( "//android.widget.Button[@text='始终允许']" ) ).click ();

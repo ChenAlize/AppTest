@@ -21,21 +21,15 @@ public class MobileElement extends Intersection {
 
     public void setPath( String path ){ locator = new MobileLocator ( path );
     }
-
-    public void clickButton( String select){
-        logger.info ( " 开始查找元素：" + select );
-        locator.Button ( select );
-        findElement ().click ();
-    }
-
     /**
      * 通过定位器定位单个元素
      * @param
      * @return
      */
-    public WebElement getFindElement( ){
-        WebElement element = driver.findElement ( locator.mobileBy () );
-        return element;
+    public WebElement getFindElement( String node , String element  ){
+        logger.info ( " 开始查找元素：" + node );
+        locator.UiSelect ( node , element);
+        return driver.findElement ( locator.mobileBy () );
     }
 
     /**
@@ -43,7 +37,7 @@ public class MobileElement extends Intersection {
      * @param
      * @return
      */
-    public WebElement findElement ( ){
+    public WebElement findElement ( final String node , final String element ){
 
         WebDriverWait wait = new WebDriverWait ( driver , 3 );
         WebElement Androidelement = null;
@@ -51,7 +45,7 @@ public class MobileElement extends Intersection {
             Androidelement = wait.until ( new ExpectedCondition<WebElement> () {
                 @Override
                 public WebElement apply(WebDriver webDriver) {
-                    return getFindElement ();
+                    return getFindElement ( node , element);
                 }
             } );
         }catch ( Exception e ){

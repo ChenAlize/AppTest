@@ -11,6 +11,7 @@ import java.util.List;
  * Created by chenbo on 2017/10/31.
  */
 public class MobileLocator {
+
     static Util.Logger.Log log = new Util.Logger.Log ( MobileLocator.class );
     private static ReadXml xml = new ReadXml ();
     private static Element element ;
@@ -54,32 +55,8 @@ public class MobileLocator {
 
     public MobileLocator( String path ){ xml.Xml ( path ); }
 
-    public void Button( String select ){
-        List<Element> list = xml.getNodes ( "Button" );
-        element = xml.getElement ( list , select );
-        setValue();
-    }
-
-    public void TextView( String select ){
-        List<Element> list = xml.getNodes ( "TextView" );
-        element = xml.getElement ( list , select );
-        setValue();
-    }
-
-    public void ImageView( String select ){
-        List<Element> list = xml.getNodes ( "ImageView" );
-        element = xml.getElement ( list , select );
-        setValue();
-    }
-
-    public void View( String select ){
-        List<Element> list = xml.getNodes ( "View" );
-        element = xml.getElement ( list , select );
-        setValue();
-    }
-
-    public void ImageButton( String select ){
-        List<Element> list = xml.getNodes ( "ImageButton" );
+    public void UiSelect( String node , String select ){
+        List<Element> list = xml.getNodes ( node );
         element = xml.getElement ( list , select );
         setValue();
     }

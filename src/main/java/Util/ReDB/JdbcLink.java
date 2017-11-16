@@ -45,7 +45,9 @@ public class JdbcLink {
     public ResultSet getSelect( String sql ){
 
         try {
+
             resultSet = statement.executeQuery ( sql );
+
         } catch (SQLException e) {
             e.printStackTrace ();
         }

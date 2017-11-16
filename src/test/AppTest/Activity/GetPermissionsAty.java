@@ -15,7 +15,4 @@ public class GetPermissionsAty extends MobileElement {
         setPath ( path );
     }
 
-    public void permissionsClick(){
-        clickButton ( "确定" );
-    }
 }

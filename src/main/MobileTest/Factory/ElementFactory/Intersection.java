@@ -8,7 +8,6 @@ import org.aspectj.util.FileUtil;
 import org.openqa.selenium.OutputType;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 /**
  * Created by chenbo on 2017/11/14.
