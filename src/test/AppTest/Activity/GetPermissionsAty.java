@@ -8,11 +8,6 @@ import Util.ReFile.ReFile;
  */
 public class GetPermissionsAty extends MobileElement {
 
-    public GetPermissionsAty() {
 
-
-        String path = ReFile.writePage ( driver , this.getClass ().getSimpleName ());
-        setPath ( path );
-    }
 
 }

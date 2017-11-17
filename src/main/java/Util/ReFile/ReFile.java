@@ -9,6 +9,9 @@ import java.io.*;
  */
 public class ReFile {
 
+    static String Activity;
+    static String Page;
+
     public enum FileType{
         XML , HTML ,TXT , BAT , CSS , JS , JAVA , JSON , JSP , YML , PNG , JPG
     }
@@ -103,15 +106,15 @@ public class ReFile {
     public static String writePage(AndroidDriver driver , String clazzname ){
         String pageName = driver.currentActivity ();
         String element = driver.getPageSource ();
-        String pathFile = null;
-        if ( pageName!=null && element!=null && !pageName.equals ( "" ) && !element.equals ( "" )){
-
-            String path = pageName + File.separator + clazzname;
-            String pathDir = ReString.pathDir ( pageName );
-            pathFile = ReString.pathFile ( path , "xml" );
+        String path = pageName ;
+        String pathDir = ReString.pathDir ( pageName );
+        String pathFile = ReString.pathFile ( path , "xml" );
             createDir ( pathDir );
             write ( element , pathFile  );
-        }
         return pathFile;
+    }
+
+    public static void PageSource( AndroidDriver driver ){
+
     }
 }

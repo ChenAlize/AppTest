@@ -19,13 +19,59 @@ public class Select {
         db.getConnection ( "SQLServer" );
     }
 
+    /**
+     * 查询手机验证码
+     * @param value
+     * @return
+     */
     public String sms( String value ){
         String sql = "SELECT top 1 SMSContent FROM BenLaiSales..SMS WHERE CellNumber='" + value + "' ORDER BY CreateTime DESC" ;
+        select = db.getSelect ( sql );
+        String string = "000000";
+
+            String SMS = null;
+            try {
+                while (select.next ()) {
+                    SMS = select.getNString ( "SMSContent" );
+                }
+            } catch (SQLException e) {
+                e.printStackTrace ();
+            }
+        if (SMS!=null) {
+            String regEx = "[^0-9]";//匹配指定范围内的数字
+
+            //Pattern是一个正则表达式经编译后的表现模式
+            Pattern p = Pattern.compile ( regEx );
+
+            // 一个Matcher对象是一个状态机器，它依据Pattern对象做为匹配模式对字符串展开匹配检查。
+            Matcher m = p.matcher ( SMS );
+
+            //将输入的字符串中非数字部分用空格取代并存入一个字符串
+            string = m.replaceAll ( "" ).substring ( 0, 6 );
+        }
+            try {
+                select.close ();
+            } catch (SQLException e) {
+                e.printStackTrace ();
+            }
+
+        db.close ();
+
+        return string;
+    }
+
+    /**
+     * 查询小呈现手机验证码
+     * @param value
+     * @return
+     */
+    public String sms_SMS( String value ){
+        String sql = "SELECT top 1 Content FROM SMS..SMS WHERE CellNumber='" + value + "' ORDER BY CreateTime DESC" ;
         select = db.getSelect ( sql );
         String SMS = null;
         try {
             while(select.next()) {
-                SMS = select.getNString ( "SMSContent" );
+                SMS = select.getNString ( "Content" );
             }
         } catch (SQLException e) {
             e.printStackTrace ();
@@ -41,15 +87,18 @@ public class Select {
 
         //将输入的字符串中非数字部分用空格取代并存入一个字符串
         String string = m.replaceAll ( "" );
-
+        try {
+            select.close ();
+        } catch (SQLException e) {
+            e.printStackTrace ();
+        }
         db.close ();
         return string;
     }
-
     @Test
     public void test() throws SQLException {
 
-        String sms = sms ( "13312340001" );
+        String sms = sms ( "13312341015" );
         System.out.println ( sms );
 
 //

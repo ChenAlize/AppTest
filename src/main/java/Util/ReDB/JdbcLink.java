@@ -18,6 +18,10 @@ public class JdbcLink {
     String userName = "sa";
     String passWrod = "cc.123";
 
+    /**
+     * 链接数据库
+     * @param db
+     */
     public void getConnection ( String db ) {
         String sqlDriver = null ;
         String DB_Url = null ;
@@ -42,6 +46,11 @@ public class JdbcLink {
         }
     }
 
+    /**
+     * 查询
+     * @param sql
+     * @return
+     */
     public ResultSet getSelect( String sql ){
 
         try {
@@ -54,9 +63,11 @@ public class JdbcLink {
         return resultSet;
     }
 
+    /**
+     * 清除资源
+     */
     public void close(){
         try {
-            resultSet.close ();
             statement.close ();
             connection.close ();
         } catch (SQLException e) {

@@ -53,11 +53,14 @@ public class MobileLocator {
         return ss;
     }
 
-    public MobileLocator( String path ){ xml.Xml ( path ); }
+    public static void Xml( String path ){ xml.Xml ( path ); }
 
-    public void UiSelect( String node , String select ){
+    public static void UiSelect( String select ){
+        String[] a = select.split ( ";" );
+        String node = a[0];
+        String value = a[1];
         List<Element> list = xml.getNodes ( node );
-        element = xml.getElement ( list , select );
+        element = xml.getElement ( list , value );
         setValue();
     }
 
@@ -86,7 +89,7 @@ public class MobileLocator {
         return packageName;
     }
 
-    public void setValue() {
+    public static void setValue() {
           index = element.attributeValue ( "index" ) ;
           text = element.attributeValue ( "text" );
           className = element.attributeValue ( "class" );

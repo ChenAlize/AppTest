@@ -26,6 +26,20 @@ import java.util.*;
  */
 public class Test extends ReInitialize{
 
+    @org.testng.annotations.Test(enabled = false)
+    public void  test(){
+        String element = "Button;text=\"确定\"";
+        String[] a = element.split ( ";" );
+        String classname = "android.widget." + a[0];
+        String attribute = a[1];
+        String[] b = attribute.split ( "=" );
+        System.out.println ( classname );
+        String key = b[0];
+        String value = b[1].replaceAll ( "\"" , "" );
+        System.out.println ( key );
+        System.out.println ( value );
+    }
+
     @org.testng.annotations.Test( enabled = false )
     public void getXpath() throws ParserConfigurationException, IOException, SAXException {
 
@@ -111,7 +125,7 @@ public class Test extends ReInitialize{
      * 读取XML
      * @throws DocumentException
      */
-    @org.testng.annotations.Test(enabled = true )
+    @org.testng.annotations.Test(enabled = false )
     public void  readerXml() throws DocumentException {
         String  path = "com/android/benlai/activity/main/MainActivity/UserHomeAty.xml";
         ReadXml readXml = new ReadXml ();

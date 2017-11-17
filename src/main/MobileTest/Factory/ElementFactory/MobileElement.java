@@ -15,21 +15,17 @@ import java.net.MalformedURLException;
  */
 public class MobileElement extends Intersection {
 
-    MobileLocator locator;
-
     Log logger = new Log ( MobileElement.class );
 
-    public void setPath( String path ){ locator = new MobileLocator ( path );
-    }
     /**
      * 通过定位器定位单个元素
      * @param
      * @return
      */
-    public WebElement getFindElement( String node , String element  ){
+    public WebElement getFindElement( String node ){
         logger.info ( " 开始查找元素：" + node );
-        locator.UiSelect ( node , element);
-        return driver.findElement ( locator.mobileBy () );
+        MobileLocator.UiSelect ( node );
+        return driver.findElement ( MobileLocator.mobileBy () );
     }
 
     /**
@@ -37,20 +33,20 @@ public class MobileElement extends Intersection {
      * @param
      * @return
      */
-    public WebElement findElement ( final String node , final String element ){
+    public WebElement findElement ( final String node  ){
 
         WebDriverWait wait = new WebDriverWait ( driver , 3 );
-        WebElement Androidelement = null;
+        WebElement androidelement = null;
         try {
-            Androidelement = wait.until ( new ExpectedCondition<WebElement> () {
+            androidelement = wait.until ( new ExpectedCondition<WebElement> () {
                 @Override
                 public WebElement apply(WebDriver webDriver) {
-                    return getFindElement ( node , element);
+                    return getFindElement ( node );
                 }
             } );
         }catch ( Exception e ){
             log.error ( "定位超时！" );
         }
-        return Androidelement;
+        return androidelement;
     }
 }

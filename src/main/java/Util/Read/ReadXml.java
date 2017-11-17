@@ -105,17 +105,12 @@ public class ReadXml {
      * @return
      */
     public Element getElement(List<Element> element , String attribute){
+
+        String[] b = attribute.split ( "=" );
+        String key = b[0];
+        String value = b[1].replaceAll ( "\"" , "" );
         for ( Element e : element  ) {
-            if (e.attributeValue ( "text" ).equals ( attribute )) {
-                setElements ( e );
-            }
-            if (e.attributeValue ( "index" ).equals ( attribute )) {
-                setElements ( e );
-            }
-            if (e.attributeValue ( "content-desc" ).equals ( attribute )) {
-                setElements ( e );
-            }
-            if (e.attributeValue ( "bounds" ).equals ( attribute )) {
+            if (e.attributeValue ( key ).equals ( value )) {
                 setElements ( e );
             }
         }
@@ -126,24 +121,9 @@ public class ReadXml {
      * 查询控件
      */
     public List<Element> getNodes( String node ){
+        String className = "android.widget." + node;
         Element root = getRootElement ();
-        List<Element> list = new ArrayList <Element> ();
-        if ( node.equalsIgnoreCase ( "TextView" )){
-            list = selectNode ( root , "android.widget.TextView" );
-        }
-        if ( node.equalsIgnoreCase ( "ImageView" )){
-            list = selectNode ( root , "android.widget.ImageView" );
-        }
-        if ( node.equalsIgnoreCase ( "View" )){
-            list = selectNode ( root , "android.widget.View" );
-        }
-        if ( node.equalsIgnoreCase ( "Button" )){
-            list = selectNode ( root , "android.widget.Button" );
-        }
-        if ( node.equalsIgnoreCase ( "ImageButton" )){
-            list = selectNode ( root , "android.widget.ImageButton" );
-        }
-        return list;
+        return selectNode ( root , className );
     }
 
     /**

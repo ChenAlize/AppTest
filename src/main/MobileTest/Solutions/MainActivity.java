@@ -10,6 +10,6 @@ public class MainActivity {
     static FindElement Element = new FindElement ();
 
     public static void userHome(){
-        Element.click ( "ImageButton" , "resource-id=\"com.android.benlailife.activity:id/img_tab_center\"" );
+        Element.click ( "ImageButton;resource-id=\"com.android.benlailife.activity:id/img_tab_center\"" );
     }
 }
