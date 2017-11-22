@@ -1,7 +1,6 @@
 package AppUtil;
 
 import AppData.AppConfig;
-import Util.Logger.Log;
 import Util.Logger.ReportLog;
 import Util.ReFile.ReDate;
 import io.appium.java_client.android.AndroidDriver;

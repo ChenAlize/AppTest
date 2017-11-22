@@ -1,11 +1,5 @@
 package TestCase.com.Benlai;
 
-import Act.com.Benlai.CategoryAct;
-import Act.com.Benlai.CityAct;
-import Act.com.Benlai.MainAct;
-import Act.com.Benlai.UserHomeAct;
-import Act.com.Benlai.WelcomeAct;
-import TestCase.AppTest;
 import Util.TestUtil.ReInitialize;
 import org.testng.annotations.Test;
 

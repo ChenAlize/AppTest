@@ -1,7 +1,6 @@
 package AppUtil;
 
 import Util.Logger.Log;
-import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.lang.reflect.Constructor;

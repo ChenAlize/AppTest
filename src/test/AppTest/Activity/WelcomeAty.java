@@ -1,11 +1,8 @@
 package Activity;
 
-import AppUtil.AppAction;
 import AppUtil.AppElement;
 import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by chenbo on 2017/10/18.

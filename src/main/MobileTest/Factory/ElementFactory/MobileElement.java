@@ -23,7 +23,7 @@ public class MobileElement extends Intersection {
      * @return
      */
     public WebElement getFindElement( String node ){
-        logger.info ( " 开始查找元素：" + node );
+
         MobileLocator.UiSelect ( node );
         return driver.findElement ( MobileLocator.mobileBy () );
     }
@@ -47,6 +47,7 @@ public class MobileElement extends Intersection {
         }catch ( Exception e ){
             log.error ( "定位超时！" );
         }
+        System.out.println ( androidelement );
         return androidelement;
     }
 }

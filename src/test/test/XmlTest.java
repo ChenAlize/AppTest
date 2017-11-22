@@ -1,3 +1,6 @@
+import Util.ReDB.Insert;
+import Util.ReDB.Select;
+import Util.ReDB.Update;
 import Util.Read.ReadXml;
 import org.dom4j.Attribute;
 import org.dom4j.Element;
@@ -13,9 +16,7 @@ import java.util.Map;
  */
 public class XmlTest {
 
-
-
-    @org.testng.annotations.Test
+    @org.testng.annotations.Test(enabled = false)
     public void xmlTest(){
         String  path = "com/android/benlai/activity/main/MainActivity/UserHomeAty.xml";
         ReadXml readXml = new ReadXml ();

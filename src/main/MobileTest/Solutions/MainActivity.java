@@ -7,9 +7,8 @@ import Factory.ElementFactory.FindElement;
  */
 public class MainActivity {
 
-    static FindElement Element = new FindElement ();
-
     public static void userHome(){
+        FindElement Element = new FindElement ();
         Element.click ( "ImageButton;resource-id=\"com.android.benlailife.activity:id/img_tab_center\"" );
     }
 }

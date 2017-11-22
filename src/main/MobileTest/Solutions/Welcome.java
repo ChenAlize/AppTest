@@ -7,9 +7,8 @@ import Factory.ElementFactory.FindElement;
  */
 public class Welcome {
 
-    static FindElement Element = new FindElement ();
-
     public static void welcome(){
+        FindElement Element = new FindElement ();
         Element.scrollLevel ( 1000, 100, 1000 );
         Element.scrollLevel ( 1000, 100, 1000 );
         Element.coordinateClick ( 314,1671 );

@@ -1,5 +1,6 @@
 package Util.ReFile;
 
+import Locator.MobileLocator;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.io.*;
@@ -9,8 +10,8 @@ import java.io.*;
  */
 public class ReFile {
 
-    static String Activity;
-    static String Page;
+    static String Activity = null ;
+    static String Page = null ;
 
     public enum FileType{
         XML , HTML ,TXT , BAT , CSS , JS , JAVA , JSON , JSP , YML , PNG , JPG
@@ -80,7 +81,8 @@ public class ReFile {
      * @param path
      */
     public static void write( String pageElement , String path ){
-
+        System.out.println ( path );
+        System.out.println ( pageElement );
         pageElement = pageElement.replace( ">\n" , ">" ).replace( ">" , ">\n" );
         Writer outputStream = null;
         try {
@@ -109,12 +111,23 @@ public class ReFile {
         String path = pageName ;
         String pathDir = ReString.pathDir ( pageName );
         String pathFile = ReString.pathFile ( path , "xml" );
-            createDir ( pathDir );
-            write ( element , pathFile  );
+        createDir ( pathDir );
+        write ( element , pathFile  );
         return pathFile;
     }
 
     public static void PageSource( AndroidDriver driver ){
-
+        String nowActivity = driver.currentActivity ();
+        String nowPage = driver.getPageSource ();
+        String path = null ;
+        if ( Activity == null && nowActivity != null || Activity != nowActivity ){
+            Activity = nowActivity;
+            path = createFile ( Activity , "xml" );
+        }
+        if ( nowPage != null ) {
+            Page = nowPage;
+            write ( Page, path );
+        }
+        MobileLocator.Xml ( path );
     }
 }

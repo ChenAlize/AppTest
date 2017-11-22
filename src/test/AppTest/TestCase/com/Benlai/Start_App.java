@@ -1,15 +1,10 @@
 package TestCase.com.Benlai;
 
-import Act.com.Benlai.MainAct;
-import Act.com.Benlai.UserHomeAct;
-import Act.com.Benlai.WelcomeAct;
 import Activity.GetPermissionsAty;
 import Activity.LoginAty;
 import Activity.MainAty;
 import Activity.UserHomeAty;
 import Activity.WelcomeAty;
-import AppUtil.ActivityFactory;
-import AppUtil.AppDriver;
 import TestCase.AppTest;
 import Util.TestUtil.ReInitialize;
 import org.testng.annotations.Test;

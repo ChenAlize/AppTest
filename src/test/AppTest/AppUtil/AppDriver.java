@@ -2,12 +2,9 @@ package AppUtil;
 
 import AppData.AppConfig;
 import Util.Logger.Log;
-import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**

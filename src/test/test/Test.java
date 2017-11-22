@@ -192,11 +192,9 @@ public class Test extends ReInitialize{
             String sql = "select Avgpoint,SOSysNo FROM benlaisales..SO_ITEM WHERE SOSYSNO=900166377";
             String sql2 = "SELECT CustomerSysNo,DeviceID FROM CustomerDB..AppCustomerDevice WHERE CustomerSysNo=7308371 order BY CreateTime DESC";
 
-            JdbcLink jdbcLink = new JdbcLink ();
+            JdbcLink jdbcLink = new JdbcLink ( "192.168.60.49" );
 
-            jdbcLink.getConnection ( "SQLServer" );
-
-            ResultSet resultSet = jdbcLink.getSelect ( sql2 );
+            ResultSet resultSet = jdbcLink.select ( sql2 );
 
             Map map = new HashMap ( );
 
@@ -210,7 +208,7 @@ public class Test extends ReInitialize{
             e.printStackTrace ();
         }
         System.out.println ( map.get ( 7308371 ) );
-        jdbcLink.close ();
+        jdbcLink.Close ();
     }
 
     /**

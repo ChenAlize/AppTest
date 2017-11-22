@@ -1,9 +1,12 @@
 package Util.TestUtil;
 
-import Util.Logger.Log;
 import Util.Logger.ReportLog;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
 
 import java.lang.reflect.Method;
 
@@ -34,7 +37,6 @@ public class ReInitialize {
 
     @AfterClass
     public void aftrtClass(){
-
         log.close();
         System.out.println( " ===== 测试结束：  " + this.getClass().getSimpleName() + "清空Extent资源" );
     }

@@ -1,9 +1,7 @@
 package TestCase.com.Benlai;
 
 import Act.com.Benlai.LoginAct;
-import Act.com.Benlai.MainAct;
 import Act.com.Benlai.UserHomeAct;
-import Act.com.Benlai.WelcomeAct;
 import AppData.AppConfig;
 import TestCase.AppTest;
 import Util.TestUtil.ReInitialize;

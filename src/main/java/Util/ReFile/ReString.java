@@ -3,6 +3,8 @@ package Util.ReFile;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by chenbo on 2017/10/27.
@@ -71,6 +73,19 @@ public class ReString {
             case JS: suf = ".js" ;break;
         }
         return suf ;
+    }
+
+    public static String code( String SMS){
+        String regEx = "[^0-9]";//匹配指定范围内的数字
+
+        //Pattern是一个正则表达式经编译后的表现模式
+        Pattern p = Pattern.compile(regEx);
+
+        // 一个Matcher对象是一个状态机器，它依据Pattern对象做为匹配模式对字符串展开匹配检查。
+        Matcher m = p.matcher(SMS);
+
+        //将输入的字符串中非数字部分用空格取代并存入一个字符串
+        return m.replaceAll ( "" ).substring ( 0,6 );
     }
 
 }

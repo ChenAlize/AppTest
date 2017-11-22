@@ -109,6 +109,7 @@ public class ReadXml {
         String[] b = attribute.split ( "=" );
         String key = b[0];
         String value = b[1].replaceAll ( "\"" , "" );
+        log.info ( "元素：" + key + " -->>匹配查询：" + value );
         for ( Element e : element  ) {
             if (e.attributeValue ( key ).equals ( value )) {
                 setElements ( e );
@@ -123,6 +124,7 @@ public class ReadXml {
     public List<Element> getNodes( String node ){
         String className = "android.widget." + node;
         Element root = getRootElement ();
+        log.info ( "类名：" + className );
         return selectNode ( root , className );
     }
 

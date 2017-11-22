@@ -1,6 +1,5 @@
 package Act.com.Benlai;
 
-import Act.ActBase;
 import Activity.MainAty;
 import Activity.WelcomeAty;
 import AppUtil.ActivityFactory;

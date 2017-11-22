@@ -1,4 +1,3 @@
-import Activity.GetPermissionsAty;
 import Factory.ElementFactory.MobileElement;
 import Util.TestUtil.ReInitialize;
 import io.appium.java_client.MobileBy;

@@ -1,10 +1,8 @@
 package Act.com.Benlai;
 
-import Act.ActBase;
 import Activity.MainAty;
 import Activity.UserHomeAty;
 import AppUtil.ActivityFactory;
-import TestCase.AppTest;
 import io.appium.java_client.android.AndroidDriver;
 
 public class MainAct  {

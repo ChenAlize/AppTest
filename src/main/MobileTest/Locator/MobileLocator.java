@@ -30,7 +30,6 @@ public class MobileLocator {
         if ( attributeOnly ( id )){
             ss = MobileBy.id ( id );
             log.info ( "id定位：" + id );
-
             } else if ( attributeOnly ( name )){
                 ss = MobileBy.AccessibilityId ( name );
                 log.info ( "AccessibilityId定位：" + name );
@@ -49,13 +48,21 @@ public class MobileLocator {
                             xpath = "//"+className+"[@index='" +index + "']" ;
                             ss = MobileBy.xpath ( xpath );
                             log.info ( "xpath定位：" + xpath );
-                        }
+                        }else {
+
+            ss = MobileBy.id ( id );
+            log.info ( "id定位：" + id );
+//                    xpath = "//" + element.getPath ();
+//                    ss = MobileBy.xpath ( xpath );
+//                    log.info ( "xpath定位：" + xpath );
+        }
         return ss;
     }
 
     public static void Xml( String path ){ xml.Xml ( path ); }
 
     public static void UiSelect( String select ){
+        log.info ( " 开始查找元素：" + select );
         String[] a = select.split ( ";" );
         String node = a[0];
         String value = a[1];

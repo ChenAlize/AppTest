@@ -1,6 +1,7 @@
 package Factory.ElementFactory;
 
 import Util.Logger.Log;
+import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -51,7 +52,7 @@ public class DriverFactory {
         des.setCapability ( "appPackage" , "com.android.benlailife.activity" );
         des.setCapability ( "appActivity" , "com.android.benlai.activity.WelcomeActivity" );
         //支持中文
-        des.setCapability("unicodeKeyboard", "True");
+//        des.setCapability("unicodeKeyboard", "True");
         //在设定了 unicodeKeyboard 关键字的 Unicode 测试结束后，重置输入法到原有状态
         des.setCapability("resetKeyboard", "True");
         //没有新命令是的超出时间设置
@@ -60,7 +61,7 @@ public class DriverFactory {
         des.setCapability("nosign", "True");
 
         AndroidDriver driver = new AndroidDriver( new URL ( "http://127.0.0.1:4723/wd/hub" ) , des );
-
+        ReFile.PageSource ( driver );
         return driver;
     }
 }
