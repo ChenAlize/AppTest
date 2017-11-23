@@ -1,27 +1,78 @@
-[2017-11-22 18:55:19 CST] [main] [] - 【成功】  初始化 AndroidDriver 
-[2017-11-22 19:34:16 CST] [main] [] - 【成功】  初始化 AndroidDriver 
-[2017-11-22 19:34:43 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
-[2017-11-22 19:34:43 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
-[2017-11-22 19:34:44 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:34:44 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
-[2017-11-22 19:34:45 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:38:40 CST] [main] [] - 【成功】  初始化 AndroidDriver 
-[2017-11-22 19:39:08 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
-[2017-11-22 19:39:08 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
-[2017-11-22 19:39:09 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:39:09 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
-[2017-11-22 19:39:10 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:41:20 CST] [main] [] - 【成功】  初始化 AndroidDriver 
-[2017-11-22 19:41:47 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
-[2017-11-22 19:41:47 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
-[2017-11-22 19:41:48 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:41:48 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
-[2017-11-22 19:41:49 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:49:59 CST] [main] [] - 【成功】  初始化 AndroidDriver 
-[2017-11-22 19:50:27 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
-[2017-11-22 19:50:27 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
-[2017-11-22 19:50:28 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 19:50:28 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
-[2017-11-22 19:50:42 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
-[2017-11-22 20:11:32 CST] [main] [] - 【成功】  初始化 AndroidDriver 
-[2017-11-22 20:11:59 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-23 12:58:38 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-23 12:59:03 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-23 12:59:03 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 12:59:03 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-23 12:59:03 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-23 12:59:04 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-23 12:59:04 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 12:59:04 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-23 12:59:04 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:06 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-23 12:59:06 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 12:59:06 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-23 12:59:06 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:07 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-23 12:59:07 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 12:59:07 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-23 12:59:07 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:08 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 12:59:08 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 12:59:08 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 12:59:09 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:10 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 12:59:10 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 12:59:10 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 12:59:10 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:10 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 12:59:10 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 12:59:10 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 12:59:10 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:11 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 12:59:11 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 12:59:11 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 12:59:11 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:11 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 12:59:11 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 12:59:11 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 12:59:11 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 12:59:12 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 12:59:12 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 12:59:12 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 12:59:12 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 13:04:49 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-23 13:05:15 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-23 13:05:15 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 13:05:15 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-23 13:05:15 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-23 13:05:16 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-23 13:05:16 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 13:05:16 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-23 13:05:16 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 13:05:18 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-23 13:05:18 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 13:05:18 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-23 13:05:18 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 13:05:19 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-23 13:05:19 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 13:05:19 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-23 13:05:19 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-23 13:05:24 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-23 13:05:24 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 13:05:24 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-23 13:05:24 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/ib_dialog_red_package_close
+[2017-11-23 13:05:26 CST] [main] [] -【信息】  开始查找元素：ImageButton;resource-id="com.android.benlailife.activity:id/img_tab_center"
+[2017-11-23 13:05:26 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-23 13:05:26 CST] [main] [] -【信息】 元素：resource-id -->>匹配查询：com.android.benlailife.activity:id/img_tab_center
+[2017-11-23 13:05:26 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/img_tab_center
+[2017-11-23 13:05:27 CST] [main] [] -【信息】  开始查找元素：TextView;text="登录/注册"
+[2017-11-23 13:05:27 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-23 13:05:27 CST] [main] [] -【信息】 元素：text -->>匹配查询：登录/注册
+[2017-11-23 13:05:27 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/tvCenterLogin
+[2017-11-23 13:05:29 CST] [main] [] -【信息】  开始查找元素：EditText;text="请输入您的手机号"
+[2017-11-23 13:05:29 CST] [main] [] -【信息】 类名：android.widget.EditText
+[2017-11-23 13:05:29 CST] [main] [] -【信息】 元素：text -->>匹配查询：请输入您的手机号
+[2017-11-23 13:05:29 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/et_login_mobile
+[2017-11-23 13:05:34 CST] [main] [] -【信息】  开始查找元素：Button;text="获取验证码"
+[2017-11-23 13:05:34 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-23 13:05:34 CST] [main] [] -【信息】 元素：text -->>匹配查询：获取验证码
+[2017-11-23 13:05:34 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_login_get_sms_verification_code

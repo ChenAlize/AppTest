@@ -54,7 +54,7 @@ public class DriverFactory {
         //支持中文
 //        des.setCapability("unicodeKeyboard", "True");
         //在设定了 unicodeKeyboard 关键字的 Unicode 测试结束后，重置输入法到原有状态
-        des.setCapability("resetKeyboard", "True");
+//        des.setCapability("resetKeyboard", "True");
         //没有新命令是的超出时间设置
         des.setCapability("nowCommandTimeout", "10");
         //跳过检查和对应用进行debug  签名的步骤

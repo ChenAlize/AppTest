@@ -124,7 +124,7 @@ public class ReFile {
             Activity = nowActivity;
             path = createFile ( Activity , "xml" );
         }
-        if ( nowPage != null ) {
+        if ( nowPage != null && Page == null || Page != nowPage) {
             Page = nowPage;
             write ( Page, path );
         }

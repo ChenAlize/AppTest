@@ -35,11 +35,11 @@ public class CouponOldToNew {
     @org.testng.annotations.Test( enabled = true)
     public void CustomerBalance(){
 
-        Select select = new Select ( "192.168.60.245" );
+        Select select = new Select ( "192.168.60.49" );
 
-        int customerSysNo = select.CustomerSysNo ( "13312341234" ) ;
+        int customerSysNo = select.CustomerSysNo ( "13312341032" ) ;
 
-        Update update = new Update ( "192.168.60.245" );
+        Update update = new Update ( "192.168.60.49" );
         //修改账户余额
         update.CustomerBalance ( "199" , customerSysNo );
         select.close ();

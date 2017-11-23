@@ -9,12 +9,13 @@ import org.testng.annotations.*;
 public class LoginTest extends TestBase {
 
     @org.testng.annotations.Test(enabled = true)
-    public void loginTest(){
+    public void loginTest() throws InterruptedException {
         welcome ();
         Test.click ( "Button;text=\"确定\"" );
         Test.click ( "Button;text=\"始终允许\"" );
         Test.click ( "Button;text=\"始终允许\"" );
         Test.click ( "Button;text=\"始终允许\"" );
+        Thread.sleep ( 3000 );
         Test.click ( "ImageButton;content-desc=\"关闭\"" );
         userHome();
         Test.click ( "TextView;text=\"登录/注册\"" );
