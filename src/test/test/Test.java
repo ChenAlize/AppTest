@@ -133,7 +133,7 @@ public class Test extends ReInitialize{
         Element root = readXml.getRootElement ();
         String xpath = "/";
         /*获取根节点下，所以节点名称为 "" 的节点 */
-        java.util.List <Element> element = readXml.getNodes ( "TextView" );
+        java.util.List <Element> element = readXml.getNodes ( "android.widget.TextView" );
         Element te = readXml.getElement ( element , "[375,307][704,412]" );
 
             xpath = xpath + te.getPath ();

@@ -66,7 +66,7 @@ public class MobileLocator {
         String[] a = select.split ( ";" );
         String node = a[0];
         String value = a[1];
-        List<Element> list = xml.getNodes ( node );
+        List<Element> list = xml.getNodes ( "android.widget." + node );
         element = xml.getElement ( list , value );
         setValue();
     }

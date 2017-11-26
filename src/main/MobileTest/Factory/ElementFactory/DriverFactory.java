@@ -1,5 +1,6 @@
 package Factory.ElementFactory;
 
+import Factory.Factory.Config;
 import Util.Logger.Log;
 import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
@@ -47,10 +48,10 @@ public class DriverFactory {
         //设备配置
         des.setCapability ( "deviceName","anything" );
         des.setCapability ( "platformVersion" , "7.0" );
-        des.setCapability ( "udid" , "GWY0216B26003168" );
+        des.setCapability ( "udid" , Config.Config("udid"));
         //app入口
-        des.setCapability ( "appPackage" , "com.android.benlailife.activity" );
-        des.setCapability ( "appActivity" , "com.android.benlai.activity.WelcomeActivity" );
+        des.setCapability ( "appPackage" , Config.Config("appPackage") );
+        des.setCapability ( "appActivity" , Config.Config("appActivity") );
         //支持中文
 //        des.setCapability("unicodeKeyboard", "True");
         //在设定了 unicodeKeyboard 关键字的 Unicode 测试结束后，重置输入法到原有状态
@@ -60,7 +61,7 @@ public class DriverFactory {
         //跳过检查和对应用进行debug  签名的步骤
         des.setCapability("nosign", "True");
 
-        AndroidDriver driver = new AndroidDriver( new URL ( "http://127.0.0.1:4723/wd/hub" ) , des );
+        AndroidDriver driver = new AndroidDriver( new URL ( Config.Config("url") ) , des );
         ReFile.PageSource ( driver );
         return driver;
     }

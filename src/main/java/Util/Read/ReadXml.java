@@ -122,10 +122,9 @@ public class ReadXml {
      * 查询控件
      */
     public List<Element> getNodes( String node ){
-        String className = "android.widget." + node;
         Element root = getRootElement ();
-        log.info ( "类名：" + className );
-        return selectNode ( root , className );
+        log.info ( "类名：" + node );
+        return selectNode ( root , node );
     }
 
     /**

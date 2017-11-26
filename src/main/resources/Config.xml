@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <add name="udid" value="GWY0216B26003168" explain=""/>
+    <add name="appPackage" value="com.android.benlailife.activity" explain=""/>
+    <add name="appActivity" value="com.android.benlai.activity.WelcomeActivity" explain=""/>
+    <add name="url" value="http://127.0.0.1:4723/wd/hub" explain=""/>
+    <add name="trunk" value="192.168.60.245" explain=""/>
+    <add name="branch" value="192.168.60.49" explain=""/>
+    <add name="" value=""/>
+    <add name="" value=""/>
+    <add name="" value=""/>
+    <add name="" value=""/>
+    <add name="" value=""/>
+    <add name="" value=""/>
+    <add name="" value=""/>
+</config>
