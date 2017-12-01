@@ -29,11 +29,11 @@ public class Intersection {
 
         driver.swipe ( x1 , y , x2 ,y , 0 );
         log.info ( "【水平划动】 ： ( " + x1 + " , " + y + " : " + x2 + " , " + y + " ) " , screenShot () );
-        try {
-            Thread.sleep ( 1000 );
-        } catch (InterruptedException e) {
-            e.printStackTrace ();
-        }
+//        try {
+//            Thread.sleep ( 1000 );
+//        } catch (InterruptedException e) {
+//            e.printStackTrace ();
+//        }
     }
 
     /**
@@ -44,11 +44,11 @@ public class Intersection {
 
         driver.swipe ( x , y1 , x , y2 , 0 );
         log.info ( "【竖直划动】( " + x + " , " + y1 + " : " + x + " , " + y2 + " ) " ,screenShot () );
-        try {
-            Thread.sleep ( 2000 );
-        } catch (InterruptedException e) {
-            e.printStackTrace ();
-        }
+//        try {
+//            Thread.sleep ( 2000 );
+//        } catch (InterruptedException e) {
+//            e.printStackTrace ();
+//        }
     }
 
     /**

@@ -111,7 +111,7 @@ public class ReadXml {
         String value = b[1].replaceAll ( "\"" , "" );
         log.info ( "元素：" + key + " -->>匹配查询：" + value );
         for ( Element e : element  ) {
-            if (e.attributeValue ( key ).equals ( value )) {
+            if ( e.attributeValue ( "text" ).equals ( value )) {
                 setElements ( e );
             }
         }
@@ -198,6 +198,11 @@ public class ReadXml {
         }
         return index;
     }
+
+    public void Cloes(){
+        doc.clearContent ();
+    }
+
 
     /**
      * xml 读取手机配置

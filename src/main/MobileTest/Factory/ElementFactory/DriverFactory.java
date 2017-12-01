@@ -1,6 +1,7 @@
 package Factory.ElementFactory;
 
 import Factory.Factory.Config;
+import Factory.Factory.ReadConfig;
 import Util.Logger.Log;
 import Util.ReFile.ReFile;
 import io.appium.java_client.android.AndroidDriver;
@@ -48,10 +49,10 @@ public class DriverFactory {
         //设备配置
         des.setCapability ( "deviceName","anything" );
         des.setCapability ( "platformVersion" , "7.0" );
-        des.setCapability ( "udid" , Config.Config("udid"));
+        des.setCapability ( "udid" , Config.UDID);
         //app入口
-        des.setCapability ( "appPackage" , Config.Config("appPackage") );
-        des.setCapability ( "appActivity" , Config.Config("appActivity") );
+        des.setCapability ( "appPackage" , Config.APPPackage );
+        des.setCapability ( "appActivity" ,Config.APPActivity );
         //支持中文
 //        des.setCapability("unicodeKeyboard", "True");
         //在设定了 unicodeKeyboard 关键字的 Unicode 测试结束后，重置输入法到原有状态
@@ -61,7 +62,7 @@ public class DriverFactory {
         //跳过检查和对应用进行debug  签名的步骤
         des.setCapability("nosign", "True");
 
-        AndroidDriver driver = new AndroidDriver( new URL ( Config.Config("url") ) , des );
+        AndroidDriver driver = new AndroidDriver( new URL ( Config.url ), des );
         ReFile.PageSource ( driver );
         return driver;
     }

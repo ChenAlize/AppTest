@@ -118,6 +118,7 @@ public class ReFile {
 
     public static void PageSource( AndroidDriver driver ){
         String nowActivity = driver.currentActivity ();
+        System.out.println ( "当前activity ：" + nowActivity );
         String nowPage = driver.getPageSource ();
         String path = null ;
         if ( Activity == null && nowActivity != null || Activity != nowActivity ){

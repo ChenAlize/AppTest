@@ -1,5 +1,7 @@
 package DB_Script;
 
+import Factory.Factory.Config;
+import Factory.Factory.ReadConfig;
 import Util.ReDB.Select;
 
 /**
@@ -9,10 +11,11 @@ public class selectTest {
 
     @org.testng.annotations.Test(enabled = true)
     public void test() {
-        Select select = new Select ( "192.168.60.49" );
+        String url = Config.trunk;
+        Select select = new Select ( url );
         String sms = "111111";
-        sms = select.sms ( "13312341234" );
-//       sms = select.sms_SMS ( "13312341234" );
+        sms = select.sms ( "13312341020" );
+//       sms = select.sms_SMS ( "13312341011" );
         select.close ();
         System.out.println ( sms );
 

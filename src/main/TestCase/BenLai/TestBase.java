@@ -18,7 +18,7 @@ public class TestBase extends ReInitialize{
     }
 
     public void userHome(){
-        MainActivity.userHome ();
+
     }
 
     public String sms( String phone ){

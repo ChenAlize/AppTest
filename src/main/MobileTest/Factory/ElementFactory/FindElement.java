@@ -7,7 +7,7 @@ import Util.ReFile.ReFile;
  */
 public class FindElement extends MobileElement {
 
-    public void click( String node  ){
+    public void click(String node  ){
         ReFile.PageSource ( driver );
         findElement ( node ).click ();
     }
@@ -17,7 +17,7 @@ public class FindElement extends MobileElement {
         findElement ( node ).sendKeys ( value );
     }
 
-    public void close(){
+    public static void close(){
         driver.quit ();
     }
 }

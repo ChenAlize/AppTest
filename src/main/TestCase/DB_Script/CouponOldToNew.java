@@ -1,9 +1,10 @@
 package DB_Script;
 
+import Factory.Factory.Config;
+import Factory.Factory.ReadConfig;
 import Util.ReDB.Insert;
 import Util.ReDB.Select;
 import Util.ReDB.Update;
-import org.testng.annotations.Test;
 
 /**
  * Created by chenbo on 2017/11/22.
@@ -35,11 +36,13 @@ public class CouponOldToNew {
     @org.testng.annotations.Test( enabled = true)
     public void CustomerBalance(){
 
-        Select select = new Select ( "192.168.60.49" );
+        String url = Config.branch;
 
-        int customerSysNo = select.CustomerSysNo ( "13312341032" ) ;
+        Select select = new Select ( url );
 
-        Update update = new Update ( "192.168.60.49" );
+        int customerSysNo = select.CustomerSysNo ( "13312341020" ) ;
+
+        Update update = new Update ( url );
         //修改账户余额
         update.CustomerBalance ( "199" , customerSysNo );
         select.close ();

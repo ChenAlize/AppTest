@@ -1,3 +1,335 @@
-[2017-11-26 12:25:59 CST] [main] [] -【信息】 类名：android.widget.add
-[2017-11-26 12:27:56 CST] [main] [] -【信息】 类名：add
-[2017-11-26 12:28:28 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:30:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:30:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:30:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:30:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:30:43 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:36:11 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:36:11 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:36:11 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:36:11 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:36:30 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:36:59 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 15:36:59 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:36:59 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:36:59 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:36:59 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:39:12 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:39:12 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:39:12 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:39:12 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:39:30 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:40:01 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 15:40:01 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:40:01 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 15:40:02 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:40:02 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:40:02 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:40:02 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:40:02 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:40:02 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:40:03 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:40:03 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:40:03 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:48:26 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:48:26 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:48:26 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:48:26 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:48:46 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:49:21 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 15:49:21 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:49:21 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 15:49:22 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:49:22 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:49:22 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:49:23 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:49:23 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:49:23 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:49:24 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:49:24 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:49:24 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:51:35 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:51:35 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:51:35 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:51:35 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:51:52 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:52:24 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 15:52:24 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:52:24 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 15:52:24 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:52:24 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:52:24 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:52:25 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:52:25 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:52:25 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:52:26 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 15:52:26 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:52:26 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 15:54:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:54:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:54:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:54:22 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:54:41 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:55:12 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 15:55:12 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:55:12 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 15:58:24 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:58:24 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:58:24 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:58:25 CST] [main] [] -【信息】 类名：add
+[2017-11-29 15:58:42 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 15:59:13 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 15:59:13 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 15:59:13 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:07:18 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:07:18 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:07:18 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:07:18 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:07:41 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:08:17 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:08:17 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:08:17 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:11:55 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:11:56 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:11:56 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:11:56 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:12:16 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:12:50 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:12:50 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:12:50 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:16:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:16:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:16:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:16:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:17:12 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:18:20 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:18:20 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:18:20 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:19:14 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:19:14 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:19:14 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:19:14 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:19:32 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:20:04 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:20:04 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:20:04 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:26:49 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:26:49 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:26:49 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:26:50 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:27:17 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:27:53 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:36:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:36:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:36:52 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:36:53 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:38:53 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:38:53 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:38:53 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:38:53 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:40:54 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:40:54 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:40:54 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:40:54 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:41:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:41:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:41:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:41:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:41:48 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:42:19 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:46:55 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:46:55 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:46:55 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:46:55 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:47:10 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:47:36 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:47:36 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:47:36 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:49:58 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:49:58 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:49:58 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:49:58 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:50:10 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:50:34 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:50:34 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:50:34 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:52:59 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:52:59 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:52:59 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:52:59 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:53:12 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:53:48 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:53:48 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:53:48 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 16:57:33 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:57:33 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:57:33 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:57:33 CST] [main] [] -【信息】 类名：add
+[2017-11-29 16:57:46 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 16:58:13 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 16:58:13 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 16:58:13 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 17:13:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:13:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:13:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:13:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:13:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:13:27 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:14:05 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 17:14:31 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 17:14:31 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:14:31 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 17:22:51 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:22:51 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:22:51 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:22:51 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:22:51 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:22:51 CST] [main] [] -【信息】 类名：add
+[2017-11-29 17:23:15 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 17:23:41 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 17:23:41 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:23:41 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 17:30:26 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 17:30:54 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 17:30:54 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:30:54 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 17:30:54 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-29 17:30:54 CST] [main] [] -【信息】 定位方式：By.id: com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-29 17:30:55 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:30:55 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:30:55 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:30:55 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:30:55 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:30:56 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:30:56 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:30:56 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:30:56 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:30:56 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:30:57 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:30:57 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:30:57 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:30:57 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:30:57 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:01 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:01 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:01 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:01 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:01 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:02 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:02 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:02 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:02 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:02 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:04 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:04 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:04 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:04 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:04 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:05 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:05 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:05 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:05 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:05 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:06 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:06 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:06 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:07 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:07 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:07 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:07 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:07 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:08 CST] [main] [] -【信息】  开始查找元素：ImageButton;content-desc="关闭"
+[2017-11-29 17:31:08 CST] [main] [] -【信息】 类名：android.widget.ImageButton
+[2017-11-29 17:31:08 CST] [main] [] -【信息】 元素：content-desc -->>匹配查询：关闭
+[2017-11-29 17:31:08 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:31:08 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:38:54 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 17:39:20 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 17:39:20 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:39:20 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 17:39:20 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-29 17:39:20 CST] [main] [] -【信息】 定位方式：By.id: com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-29 17:39:21 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:39:21 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:39:21 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:39:21 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:39:21 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:39:22 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:39:22 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:39:22 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:39:22 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:39:22 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:39:23 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:39:23 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:39:23 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:39:23 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:39:23 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:47:39 CST] [main] [] - 【成功】  初始化 AndroidDriver 
+[2017-11-29 17:48:03 CST] [main] [] -【信息】  开始查找元素：Button;text="确定"
+[2017-11-29 17:48:03 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:48:03 CST] [main] [] -【信息】 元素：text -->>匹配查询：确定
+[2017-11-29 17:48:03 CST] [main] [] -【信息】 id定位：com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-29 17:48:03 CST] [main] [] -【信息】 定位方式：By.id: com.android.benlailife.activity:id/btn_dialog_onlytrue
+[2017-11-29 17:48:04 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:48:04 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:48:04 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:48:04 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:04 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:05 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:48:05 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:48:05 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:48:05 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:05 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:06 CST] [main] [] -【信息】  开始查找元素：Button;text="始终允许"
+[2017-11-29 17:48:06 CST] [main] [] -【信息】 类名：android.widget.Button
+[2017-11-29 17:48:06 CST] [main] [] -【信息】 元素：text -->>匹配查询：始终允许
+[2017-11-29 17:48:06 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:06 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:07 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:07 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:07 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:07 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:07 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:08 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:08 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:08 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:08 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:08 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:09 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:09 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:09 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:09 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:09 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:10 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:10 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:10 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:11 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:11 CST] [main] [] -【信息】  开始查找元素：TextView;text="跳过"
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 类名：android.widget.TextView
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 元素：text -->>匹配查询：跳过
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 id定位：com.android.packageinstaller:id/permission_allow_button
+[2017-11-29 17:48:11 CST] [main] [] -【信息】 定位方式：By.id: com.android.packageinstaller:id/permission_allow_button

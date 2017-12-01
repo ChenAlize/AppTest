@@ -1,14 +1,16 @@
 package Factory.ElementFactory;
 
+import Locator.AppAction;
 import Locator.MobileLocator;
 import Util.Logger.Log;
-import io.appium.java_client.android.AndroidDriver;
+import Util.ReFile.ReFile;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.functions.ExpectedCondition;
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.net.MalformedURLException;
 
 /**
  * Created by chenbo on 2017/11/7.
@@ -23,9 +25,13 @@ public class MobileElement extends Intersection {
      * @return
      */
     public WebElement getFindElement( String node ){
-
-        MobileLocator.UiSelect ( node );
-        return driver.findElement ( MobileLocator.mobileBy () );
+        MobileLocator locator = new MobileLocator ();
+        locator.UiSelect ( node );
+        By by = locator.mobileBy ();
+        logger.info ( "定位方式：" + by );
+        WebElement element = driver.findElement ( by );
+        System.out.println ( element );
+        return element;
     }
 
     /**
@@ -35,19 +41,29 @@ public class MobileElement extends Intersection {
      */
     public WebElement findElement ( final String node  ){
 
-        WebDriverWait wait = new WebDriverWait ( driver , 3 );
+        WebDriverWait wait = new WebDriverWait ( driver , 6 );
         WebElement androidelement = null;
-        try {
-            androidelement = wait.until ( new ExpectedCondition<WebElement> () {
-                @Override
-                public WebElement apply(WebDriver webDriver) {
-                    return getFindElement ( node );
+                try {
+                    androidelement = wait.until ( new ExpectedCondition <WebElement> () {
+                        @Override
+                        public WebElement apply(WebDriver webDriver) {
+                            return getFindElement ( node );
+                        }
+                    } );
+                }catch ( Exception e ){
+                    logger.error ( "定位超时！！！" );
                 }
-            } );
-        }catch ( Exception e ){
-            log.error ( "定位超时！" );
-        }
-        System.out.println ( androidelement );
         return androidelement;
     }
+
+    public AppAction appElement( String node){
+        ReFile.PageSource ( driver );
+        AndroidElement element = (AndroidElement) findElement ( node );
+        AppAction appAction = new AppAction ();
+        appAction.setAndroidElement ( element );
+        return appAction;
+    }
+
+
+
 }

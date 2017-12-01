@@ -13,18 +13,18 @@ import java.util.List;
 public class MobileLocator {
 
     static Util.Logger.Log log = new Util.Logger.Log ( MobileLocator.class );
-    private static ReadXml xml = new ReadXml ();
-    private static Element element ;
-    private static String index ;
-    private static String text;
-    private static String className;
-    private static String packageName;
-    private static String name ;
-    private static String bounds;
-    private static String id ;
-    private static String instance;
+    private static  ReadXml xml = new ReadXml () ;
+    private  Element element ;
+    private  String index ;
+    private  String text;
+    private  String className;
+    private  String packageName;
+    private  String name ;
+    private  String bounds;
+    private  String id ;
+    private  String instance;
 
-    public static By mobileBy(){
+    public By mobileBy(){
         By ss = null;
         java.lang.String xpath ;
         if ( attributeOnly ( id )){
@@ -59,9 +59,12 @@ public class MobileLocator {
         return ss;
     }
 
-    public static void Xml( String path ){ xml.Xml ( path ); }
+    public static void Xml( String path ){
+        xml.Xml ( path );
+        System.out.println ( "读取文件：" + path );
+    }
 
-    public static void UiSelect( String select ){
+    public void UiSelect( String select ){
         log.info ( " 开始查找元素：" + select );
         String[] a = select.split ( ";" );
         String node = a[0];
@@ -96,7 +99,7 @@ public class MobileLocator {
         return packageName;
     }
 
-    public static void setValue() {
+    public  void setValue() {
           index = element.attributeValue ( "index" ) ;
           text = element.attributeValue ( "text" );
           className = element.attributeValue ( "class" );
@@ -112,7 +115,7 @@ public class MobileLocator {
      * @param attribut
      * @return
      */
-    public static boolean attributeOnly( String attribut ){
+    public  boolean attributeOnly( String attribut ){
         boolean only = false ;
         int number = 0 ;
         if ( attribut == id ){
@@ -132,7 +135,7 @@ public class MobileLocator {
      * @param attribut
      * @return
      */
-    public static boolean elementOnly( String attribut ){
+    public  boolean elementOnly( String attribut ){
         boolean only = false ;
         int number = 0 ;
         if ( attribut == id ){

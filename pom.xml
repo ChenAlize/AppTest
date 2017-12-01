@@ -110,6 +110,14 @@
         <!--链接 Oracle 数据库-->
 
         <!--android+uiautomator-->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>4.3.13.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>

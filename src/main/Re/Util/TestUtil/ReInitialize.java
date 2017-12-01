@@ -1,5 +1,6 @@
 package Util.TestUtil;
 
+import Factory.ElementFactory.FindElement;
 import Util.Logger.ReportLog;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -37,6 +38,7 @@ public class ReInitialize {
 
     @AfterClass
     public void aftrtClass(){
+        FindElement.close ();
         log.close();
         System.out.println( " ===== 测试结束：  " + this.getClass().getSimpleName() + "清空Extent资源" );
     }
