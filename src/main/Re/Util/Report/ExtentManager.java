@@ -1,8 +1,10 @@
 package Util.Report;
 
+import Factory.Factory.Config;
 import com.relevantcodes.extentreports.ExtentReports;
 
 import static com.relevantcodes.extentreports.DisplayOrder.NEWEST_FIRST;
+import static com.relevantcodes.extentreports.DisplayOrder.OLDEST_FIRST;
 import static com.relevantcodes.extentreports.NetworkMode.OFFLINE;
 
 /**
@@ -11,7 +13,7 @@ import static com.relevantcodes.extentreports.NetworkMode.OFFLINE;
 public class ExtentManager {
 
     static ExtentReports extent;
-    static String filePath = new String( System.getProperty ( "user.dir" ) + "/test-output/Extent.html");
+    static String filePath = new String( Config.OUTPUT + "Extent.html");
 
     public synchronized static ExtentReports getoneReporter() {
         if (extent == null) {
@@ -26,7 +28,7 @@ public class ExtentManager {
     }
 
     public static ExtentReports getExtentReport (){
-        extent = new ExtentReports(  filePath , false ,NEWEST_FIRST , OFFLINE );
+        extent = new ExtentReports(  filePath , true ,OLDEST_FIRST , OFFLINE );
         extent.config ().documentTitle("测试报表-1.0")
                         .reportName("Android Test")
                         .reportHeadline("Com.BenLai");

@@ -1,5 +1,6 @@
 package Factory.ElementFactory;
 
+import Factory.Factory.Config;
 import Util.Logger.ReportLog;
 import Util.ReFile.ReDate;
 import io.appium.java_client.android.AndroidDriver;
@@ -56,7 +57,7 @@ public class Intersection {
      */
     public java.lang.String screenShot ( ) {
         java.io.File screenShot = driver.getScreenshotAs ( OutputType.FILE );
-        java.lang.String screenCast = System.getProperty ( "user.dir" ) + "/test-output/screenSho/"+ ReDate.nowData ()+".png" ;
+        java.lang.String screenCast = Config.OUTPUT + "screenSho/"+ ReDate.nowData ()+".png" ;
         try {
 
             FileUtil.copyFile ( screenShot , new java.io.File ( screenCast ) );

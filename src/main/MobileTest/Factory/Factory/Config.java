@@ -1,17 +1,22 @@
 package Factory.Factory;
 
+import Util.Read.ReadProperties;
+import org.testng.annotations.Test;
+
 /**
  * Created by chenbo on 2017/11/29.
  */
 public class Config {
+    static {
+        ReadProperties.getPropertiesValue( Config.class);
+    }
 
-    static ReadConfig config = new ReadConfig ();
-
-    public static final String UDID = config.Config ( "udid" );
-    public static final String APPPackage = config.Config ( "appPackage" );
-    public static final String APPActivity = config.Config ( "appActivity" );
-    public static final String url = config.Config ( "url" );
-    public static final String trunk = config.Config ( "trunk" );
-    public static final String branch = config.Config ( "branch" );
+    public static String UDID ;
+    public static String APPPACKAGE;
+    public static String APPACTIVITY;
+    public static String URL;
+    public static String TRUNK;
+    public static String BRANCH;
+    public static String OUTPUT;
 
 }

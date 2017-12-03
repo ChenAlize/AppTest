@@ -1,7 +1,6 @@
 package DB_Script;
 
 import Factory.Factory.Config;
-import Factory.Factory.ReadConfig;
 import Util.ReDB.Insert;
 import Util.ReDB.Select;
 import Util.ReDB.Update;
@@ -36,7 +35,7 @@ public class CouponOldToNew {
     @org.testng.annotations.Test( enabled = true)
     public void CustomerBalance(){
 
-        String url = Config.branch;
+        String url = Config.BRANCH;
 
         Select select = new Select ( url );
 
