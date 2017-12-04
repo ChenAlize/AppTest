@@ -32,19 +32,4 @@ public class CouponOldToNew {
         insert.close ();
     }
 
-    @org.testng.annotations.Test( enabled = true)
-    public void CustomerBalance(){
-
-        String url = Config.BRANCH;
-
-        Select select = new Select ( url );
-
-        int customerSysNo = select.CustomerSysNo ( "13312341020" ) ;
-
-        Update update = new Update ( url );
-        //修改账户余额
-        update.CustomerBalance ( "199" , customerSysNo );
-        select.close ();
-        update.close ();
-    }
 }

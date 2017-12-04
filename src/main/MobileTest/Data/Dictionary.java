@@ -13,14 +13,13 @@ public class Dictionary {
     public  String AccessibilityId;
     public  String XPath;
 
-    public Dictionary(){
-
-    }
-    public Dictionary(String AccessibilityId ,String Id ,String path ,String XPath ) {
-        this.AccessibilityId = AccessibilityId;
-        this.Id = Id;
-        this.path = path;
-        this.XPath = XPath;
-    }
-
+//    public Dictionary(){
+//
+//    }
+//    public Dictionary(String AccessibilityId ,String Id ,String path ,String XPath ) {
+//        this.AccessibilityId = AccessibilityId;
+//        this.Id = Id;
+//        this.path = path;
+//        this.XPath = XPath;
+//    }
 }

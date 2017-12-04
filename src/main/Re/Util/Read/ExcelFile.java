@@ -91,23 +91,33 @@ public class ExcelFile {
         return list;
     }
 
+    /**
+     * 将行中keywrod之后的数据保存至Dictionary类对象，赋值
+     * @param list
+     * @return
+     */
     public Dictionary inputDictionary( List list ){
         try {
             Class dic = Class.forName( "Data.Dictionary");
             Field[] fields = dic.getFields();
-
-            if ( list.size() >= fields.length ){
-                for ( int i =0 ; i< fields.length ; i++ ){
-                    fields[i].set( null , list.get(i+1) );
+            int f = fields.length;
+            int l = list.size();
+            Object o =  dic.newInstance ();
+            if ( l >= f ){
+                for ( int i =0 ; i< f ; i++ ){
+                    fields[i].set ( o , list.get ( i+1 ));
                 }
             }else {
              System.out.println( "输入超载！" );
             }
+            return  (Dictionary)o;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace ();
         }
-        return new Dictionary();
+        return null;
     }
 }

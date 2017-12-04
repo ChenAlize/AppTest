@@ -16,20 +16,22 @@ import java.util.Map;
  */
 public class ExcelValue {
 
-    public static Map<String,Field[]> excelValue( Class<?> className ){
+    public static Map<String,Dictionary> excelValue( Class<?> className ){
         ExcelFile excelFile = new ExcelFile ();
         Workbook workbook = excelFile.getWorkBook ( "Dictionary.xlsx" );
         Sheet sheet = workbook.getSheet ( className.getSimpleName () );
-        Map<String,Field[]> map = new HashMap ();
+        Map<String,Dictionary> map = new HashMap<String,Dictionary> ();
         int rowsStart = sheet.getFirstRowNum();
-        int rowsEnd = sheet.getLastRowNum();
+        //有效行数
+//        int rowsEnd = sheet.getLastRowNum();
+        //不为空的行数
         int rownotnull = sheet.getPhysicalNumberOfRows();
+
         for ( int i = rowsStart+1 ; i< rownotnull ; i++ ){
             Row row = sheet.getRow( i );
-
             List<String> list = excelFile.cellValue( row );
-
-            excelFile.inputDictionary( list );
+            Dictionary dictionary = excelFile.inputDictionary ( list );
+            map.put ( list.get ( 0 ) , dictionary );
         }
         try {
             workbook.close ();

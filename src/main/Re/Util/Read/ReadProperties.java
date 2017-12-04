@@ -21,16 +21,16 @@ public class ReadProperties {
         try {
 
             properties.load( new InputStreamReader( inputStream ) );
-
-            Field field[] = Class.forName( className.getName() ).getFields();
-
+            Class clzss = Class.forName ( className.getName () );
+            Field field[] = clzss.getFields();
+            Object o = clzss.newInstance ();
             for ( Field f : field ) {
                 ConfigValue configValue = ConfigFactory.getConfig( f.getType() );
                 Object object = properties.get( f.getName().toLowerCase() );
                 Object value =  configValue.configValue( object );
 
                 try {
-                    f.set( null , value);
+                    f.set( o , value);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
@@ -39,6 +39,10 @@ public class ReadProperties {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace ();
+        } catch (InstantiationException e) {
+            e.printStackTrace ();
         }
     }
 }
