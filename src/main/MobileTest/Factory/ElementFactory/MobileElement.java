@@ -64,6 +64,4 @@ public class MobileElement extends Intersection {
         return appAction;
     }
 
-
-
 }

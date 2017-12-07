@@ -9,11 +9,11 @@ import Util.ReDB.Update;
  */
 public class selectTest {
 
-    int cell = 33   ;
+    int cell = 12341034   ;
 
     @org.testng.annotations.Test(enabled = true)
     public void test() {
-        String phon = "133123410" + String.valueOf ( cell );
+        String phon = "133" + String.valueOf ( cell );
         String url = Config.TRUNK;
         Select select = new Select ( url );
         String sms = "111111";

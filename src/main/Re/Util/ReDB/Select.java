@@ -24,6 +24,7 @@ public class Select extends JdbcLink{
      */
     public String sms( String value ){
         String sql = "SELECT top 1 SMSContent FROM BenLaiSales..SMS WHERE CellNumber='" + value + "' ORDER BY CreateTime DESC" ;
+        System.out.println ( sql );
         ResultSet select = select ( sql );
         String code = "000000";
 

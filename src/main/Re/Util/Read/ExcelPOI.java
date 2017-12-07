@@ -5,6 +5,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import java.lang.reflect.Field;
@@ -14,14 +15,14 @@ import java.util.List;
 /**
  * Created by chenbo on 2017/12/1.
  */
-public class ExcelFile {
+public class ExcelPOI {
     /**
      * 字符流读取文件
      * @param filename
      * @return
      */
     private java.io.InputStream excelStream( String filename ){
-        return ExcelFile.class.getClassLoader ().getResourceAsStream ( filename );
+        return ExcelPOI.class.getClassLoader ().getResourceAsStream ( filename );
     }
 
     /**
@@ -38,7 +39,7 @@ public class ExcelFile {
      * @param cell
      * @return
      */
-    private String stringValue(Cell cell ){
+    public String stringValue(Cell cell ){
 
         String cellValue = null;
         if(cell==null||cell.equals("")||cell.getCellType() ==HSSFCell.CELL_TYPE_BLANK){
@@ -92,7 +93,7 @@ public class ExcelFile {
     }
 
     /**
-     * 将行中keywrod之后的数据保存至Dictionary类对象，赋值
+     * 将行中keyword之后的数据保存至Dictionary类对象，赋值
      * @param list
      * @return
      */
@@ -105,7 +106,7 @@ public class ExcelFile {
             Object o =  dic.newInstance ();
             if ( l >= f ){
                 for ( int i =0 ; i< f ; i++ ){
-                    fields[i].set ( o , list.get ( i+1 ));
+                    fields[i].set ( o , list.get ( i ));
                 }
             }else {
              System.out.println( "输入超载！" );
@@ -120,4 +121,5 @@ public class ExcelFile {
         }
         return null;
     }
+
 }
